@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lead Snapshot — Jonathan Hall</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7fb;
+    --surface:#ffffff;
+    --ink:#0b1220;
+    --muted:#667085;
+    --line:#e6e8ee;
+    --chip:#f3f4f8;
+    --brand:#0b1220;
+    --blue:#1e6aff;
+    --green:#16a34a;
+    --radius:16px;
+    --shadow:0 10px 28px rgba(16,24,40,.08), 0 2px 6px rgba(16,24,40,.03);
+    --card-pad:22px;
+    --grid-gap:16px;
+    --container:1240px;
+  }
+  html,body{background:var(--bg); color:var(--ink); margin:0; font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; line-height:1.6}
+  a{color:#1e6aff; text-decoration:none}
+  .container{max-width:var(--container); margin:0 auto; padding:28px 18px}
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:var(--card-pad); box-shadow:var(--shadow)}
+  .muted{color:var(--muted)}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+  .chip{display:inline-block; font-size:12px; color:#344054; background:var(--chip); border:1px solid var(--line); border-radius:999px; padding:8px 12px}
+  .h1{margin:6px 0 2px; letter-spacing:-.02em; font-weight:800; font-size:32px}
+  .section-gap{height:22px}
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:var(--grid-gap)}
+  .grid-3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:var(--grid-gap)}
+  .kpi .label{font-size:12px; color:var(--muted); margin-bottom:6px}
+  .kpi .num{font-size:34px; font-weight:800; letter-spacing:-.02em}
+  .kpi .sub{font-size:13px; color:var(--muted); margin-top:6px}
+  .title-sm{font-size:13px; color:var(--muted); margin:0 0 8px 0; text-transform:none}
+  table{width:100%; border-collapse:separate; border-spacing:0; border-radius:12px; overflow:hidden}
+  th,td{padding:12px 14px; font-size:14px; border-bottom:1px solid #eef1f6; vertical-align:top}
+  th{background:#fafbff; color:var(--muted); font-weight:600; width:36%}
+  tr:last-child td{border-bottom:none}
+  .right{text-align:right}
+  .center{text-align:center}
+  .chat{display:flex; flex-direction:column; gap:14px}
+  .bubble{max-width:72%; padding:12px 14px; border-radius:18px; box-shadow:0 4px 14px rgba(16,24,40,.08)}
+  .from-agent{align-self:flex-start; background:#fff; border:1px solid var(--line)}
+  .from-buyer{align-self:flex-end; background:#0b1220; color:#fff}
+  .msg-meta{font-size:12px; color:var(--muted); margin-top:6px}
+  .row{display:flex; gap:16px}
+  .pill{display:inline-block; padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:#fff; font-size:12px; color:#344054}
+  .btn{display:inline-block; background:var(--brand); color:#fff; border-radius:999px; padding:10px 16px; font-weight:600}
+  .btn:hover{opacity:.9}
+  @media (max-width: 860px){
+    .grid-2, .grid-3{grid-template-columns:1fr}
+    .bubble{max-width:100%}
+    .kpi .num{font-size:28px}
+    .container{padding:22px 14px}
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header / Snapshot -->
+    <div class="card">
+      <div class="row" style="justify-content:space-between; align-items:flex-start;">
+        <div>
+          <div class="muted" style="font-size:12px; letter-spacing:.08em; text-transform:uppercase">LEAD SNAPSHOT</div>
+          <h1 class="h1">Jonathan Hall • Marbella</h1>
+          <div class="chips">
+            <span class="chip">Qualified</span>
+            <span class="chip">Class A</span>
+            <span class="chip">EN</span>
+            <span class="chip">Source: Facebook</span>
+            <span class="chip">Stage: Early</span>
+            <span class="chip">ICP: A</span>
+          </div>
+        </div>
+        <div class="muted" style="font-size:12px; padding-top:4px;">Aug 9, 2025</div>
+      </div>
+      <p class="muted" style="margin:12px 0 0;">
+        A-class buyer (UK-based) planning for a second home in Marbella, Costa del Sol. Budget up to €350k, mortgage required. Seeking a minimum 2-bed apartment (preferably with pool) close to the beach and restaurants. Usage: several months/year as second home, with short-term holiday lettings. At early research stage. Exploring Marbella and open to Murcia & Valencia. Facebook lead, answered call.
+      </p>
+    </div>
+
+    <div class="section-gap"></div>
+
+    <!-- KPI -->
+    <div class="card kpi">
+      <div class="grid-3 center">
+        <div>
+          <div class="label">Budget</div>
+          <div class="num">€350,000</div>
+          <div class="sub">Mortgage</div>
+        </div>
+        <div>
+          <div class="label">Property</div>
+          <div class="num">2+ bed apt</div>
+          <div class="sub">Apartment • Pool preferred</div>
+        </div>
+        <div>
+          <div class="label">Timing</div>
+          <div class="num">Oct 2025?</div>
+          <div class="sub">Viewing trip planned</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-gap"></div>
+
+    <!-- Buyer + Deal -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="title-sm">Buyer</div>
+        <table>
+          <tr><th>Full name</th><td>Jonathan Hall</td></tr>
+          <tr><th>Status / Class</th><td>Qualified • A</td></tr>
+          <tr><th>Language</th><td>EN</td></tr>
+          <tr><th>Nationality</th><td>UK</td></tr>
+          <tr><th>Residence</th><td>UK</td></tr>
+          <tr><th>Profile</th><td>Male • Looking for 2 bed minimum • Returning visitor</td></tr>
+          <tr><th>Income</th><td>Not disclosed</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <div class="title-sm">Deal</div>
+        <table>
+          <tr><th>Budget</th><td>€350,000</td></tr>
+          <tr><th>Financing</th><td>Mortgage</td></tr>
+          <tr><th>Timeline</th><td>Viewing trip planned October 2025</td></tr>
+          <tr><th>Source</th><td>Facebook (Q Form Optimized – Mix)</td></tr>
+          <tr><th>Last touch</th><td>Answered call</td></tr>
+          <tr><th>Last call</th><td>12 Aug 2025, 18:07 BST</td></tr>
+          <tr><th>Internal ID</th><td>RB-2025-004740</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-gap"></div>
+
+    <!-- Preferences -->
+    <div class="card">
+      <div class="title-sm">Preferences</div>
+      <table>
+        <tr><th>Category</th><th>Value</th></tr>
+        <tr><td>Budget</td><td>€250,000–€350,000</td></tr>
+        <tr><td>Size</td><td>Not specified</td></tr>
+        <tr><td>Rooms</td><td>2+ bedrooms (apartment)</td></tr>
+        <tr><td>View</td><td>Not specified</td></tr>
+        <tr><td>Locations</td><td>Marbella, Costa del Sol (open to Murcia & Valencia)</td></tr>
+        <tr><td>Features</td><td>Pool preferred • Close to sea • Near restaurants</td></tr>
+      </table>
+    </div>
+
+    <div class="section-gap"></div>
+
+    <!-- Search + Requirements -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="title-sm">Search</div>
+        <table>
+          <tr><th>Region</th><td>Costa del Sol</td></tr>
+          <tr><th>Areas</th><td>Marbella (open to Murcia, Valencia)</td></tr>
+          <tr><th>Property type</th><td>Apartment (min. 2 bedrooms)</td></tr>
+          <tr><th>Bedrooms / Baths</th><td>2+ beds</td></tr>
+          <tr><th>Use</th><td>Second home + short-term rental</td></tr>
+          <tr><th>Rental</th><td>Short-term allowed</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <div class="title-sm">Key requirements</div>
+        <div class="chips">
+          <span class="chip">Pool</span>
+          <span class="chip">Close to sea</span>
+          <span class="chip">Near restaurants</span>
+          <span class="chip">2+ bedrooms</span>
+          <span class="chip">Holiday rental use</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-gap"></div>
+
+    <!-- Devices -->
+    <div class="card">
+      <div class="title-sm">Devices & Notifications</div>
+      <table>
+        <tr><th>Setting</th><th>Status</th></tr>
+        <tr><td>Platforms</td><td>Not specified</td></tr>
+        <tr><td>Push notifications</td><td>Not enabled</td></tr>
+        <tr><td>Last app visit</td><td>Never</td></tr>
+      </table>
+    </div>
+    <div class="section-gap"></div>
+    <!-- Conversation - not included (no chat reply from lead)-->
+
+    <!-- Call transcript -->
+    <div class="card">
+      <div class="row" style="justify-content:space-between; align-items:center;">
+        <div class="title-sm">Call transcript</div>
+        <div class="muted" style="font-size:12px">Last touch: Answered call</div>
+      </div>
+      <div class="call" style="margin-top:8px;">
+        <div class="turn">
+          <div class="role">AI</div>
+          <div class="line">Hi, Jonathan. It's Isabella from Riviera. I am calling about your property inquiry from Facebook.</div>
+        </div>
+        <div class="turn">
+          <div class="role">User</div>
+          <div class="line">Sorry. Say again?</div>
+        </div>
+        <div class="turn">
+          <div class="role">AI</div>
+          <div class="line">Of course. Hi, Jonathan. This is Isabella from Raveiro. Thank you for your interest in property in Costa Del Sol. May I ask which specific area are you most interested in? For example, Marbella, Estepona, Calahonda, etcetera.</div>
+        </div>
+        <div class="turn">
+          <div class="role">User</div>
+          <div class="line">Yeah. Sorry. It's early stage of me, so I'm just returning back from work. You've hit me up with something. So I'm looking up either either timeshare in Marbella with Marriott. And I'm looking probably at a a a a a smaller base. I I know Marbella well. I like to just deploy the I'm looking at Mercia, Valencia. It's just an early date, so we try to get an idea of what's around the location through.</div>
+        </div>
+        <div class="turn">
+          <div class="role">AI</div>
+          <div class="line">Thank you, Jonathan. I've made a note that you're considering Marbella and possibly exploring other areas like Mercia or Valencia to help narrow things down. Could you let me know what type of property you're interested in? For example, are you looking for a villa, an apartment, or townhouse?</div>
+        </div>
+        <div class="turn">
+          <div class="role">User</div>
+          <div class="line">Probably 2 bedroom apartments, a minimum</div>
+        </div>
+        <div class="turn">
+          <div class="role">AI</div>
+          <div class="line">Great. I've noted a minimum of 2 bedrooms in an apartment. May I ask, what is the main purpose of this purchase? Is it for a main residence, a second home, short-term rental, long-term investment, or something else?</div>
+        </div>
+        <div class="turn">
+          <div class="role">User</div>
+          <div class="line">Probably also, it said it's a a second home for me and family during several months of the year, and then a a rental asset property for the remainder.</div>
+        </div>
+        <div class="turn">
+          <div class="role">AI</div>
+          <div class="line">Thank you, Jonathan. I've made a note of that. Are there any specific features you'd like in the apartment? For example, a pool, terrace, parking, garden, or elevator?</div>
+        </div>
+        <div class="turn">
+          <div class="role">User</div>
+          <div class="line">Probably a pool</div>
+        </div>
+        <div class="turn">
+          <div class="role">AI</div>
+          <div class="line">Understood. I've noted that a pool is important. Is there anything specific you'd like in the location, such as sea views, being close to the beach, near restaurants, golf courses, or a gym?</div>
+        </div>
+        <div class="turn">
+          <div class="role">User</div>
+          <div class="line">Probably near restaurants and close to beach but not essential.</div>
+        </div>
+        <div class="turn">
+          <div class="role">AI</div>
+          <div class="line">Thank you. I've made a note of that. Could you please share your approximate budget for this purchase?</div>
+        </div>
+        <div class="turn">
+          <div class="role">User</div>
+          <div class="line">About 250k? 350.</div>
+        </div>
+        <div class="turn">
+          <div class="role">AI</div>
+          <div class="line">Thank you, Jonathan. I've noted a budget between 250,000 and 350,000. Will you be purchasing with cash, or will you require a mortgage?</div>
+        </div>
+        <div class="turn">
+          <div class="role">User</div>
+          <div class="line">I'm mortgage.</div>
+        </div>
+        <div class="turn">
+          <div class="role">AI</div>
+          <div class="line">Great. Thank you for confirming you'll need a mortgage. That covers everything for now. I'll follow-up with some options that fit your preferences. If you have any other questions in the meantime, please let me know.</div>
+        </div>
+        <div class="turn">
+          <div class="role">User</div>
+          <div class="line">Okay. Thank you.</div>
+        </div>
+        <div class="turn">
+          <div class="role">AI</div>
+          <div class="line">Thank you, Jonathan. I appreciate your time. I'll be in touch soon with suitable options. Have a great day.</div>
+        </div>
+        <div class="turn">
+          <div class="role">User</div>
+          <div class="line">Thank you. Bye.</div>
+        </div>
+        <div class="turn">
+          <div class="role">AI</div>
+          <div class="line">You're very welcome, Jonathan. Take care, and bye for now.</div>
+        </div>
+      </div>
+    </div>
+    <div class="section-gap"></div>
+    <!-- Contact & CTA -->
+    <div class="card">
+      <div class="grid-2" style="align-items:center;">
+        <div>
+          <div class="title-sm">Contact</div>
+          <div style="font-size:15px">
+            <a href="tel:+447801101427">+44 7801 101427</a> &nbsp;•&nbsp;
+            <a href="mailto:Jonathan@hallassetmgmt.com">Jonathan@hallassetmgmt.com</a>
+          </div>
+        </div>
+        <div class="right">
+          <a class="btn" href="https://crm.example.com/leads/RB-2025-004740">Claim Lead</a>
+        </div>
+      </div>
+    </div>
+    <div class="section-gap"></div>
+    <div class="center muted" style="font-size:12px">
+      Campaign: Q Form Optimized – Mix · Timezone: Europe/London
+    </div>
+  </div>
+</body>
+</html>
