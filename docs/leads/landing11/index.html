@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Пентхаус у моря, Эльвирия — W-030OP7</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --black:#0b0b0b;
+      --text:#111827;
+      --muted:#6b7280;
+      --slate:#374151;
+      --gray-100:#f3f5f7;
+      --gray-200:#e5e7eb;
+      --gray-700:#1f2937;
+      --dark:#0f1112;
+      --dark-2:#1b1f23;
+      --brand:#000000;
+      --cyan:#61F3F3;
+      --accent:#00b3b3;
+      --radius:16px;
+      --container:1440px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--gray-100)}
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+    .section{padding:60px 0}
+    .section--lg{padding:80px 0}
+    .section--dark{background:var(--dark);color:#fff}
+    .section--medium{background:var(--dark-2);color:#fff}
+    .grid{display:grid;gap:24px}
+    .grid-2{grid-template-columns:1fr;gap:32px}
+    .grid-3{grid-template-columns:1fr;gap:24px}
+    .grid-4{grid-template-columns:1fr;gap:24px}
+    @media(min-width:1024px){
+      .grid-2{grid-template-columns:420px 1fr}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+      .grid-4{grid-template-columns:repeat(4,1fr)}
+    }
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:56px;padding:0 24px;border:1.5px solid var(--black);border-radius:10px;background:#fff;color:var(--black);cursor:pointer;transition:.2s}
+    .btn:hover{background:var(--black);color:#fff}
+    .btn--primary{background:var(--black);color:#fff}
+    .btn--primary:hover{background:#222}
+    .btn--cyan{border-color:var(--cyan);color:var(--cyan);background:transparent}
+    .btn--cyan:hover{background:var(--cyan);color:#000}
+    header{background:var(--gray-100)}
+    .header__bar{display:flex;flex-direction:column;gap:16px;justify-content:space-between;align-items:flex-start;padding:24px 0}
+    @media(min-width:640px){.header__bar{flex-direction:row;align-items:center}}
+    .logo{height:32px}
+    .hero__title{font-weight:600;line-height:1.1;margin:0 0 12px}
+    .hero__subtitle{color:rgba(0,0,0,.55);font-size:13px;margin:0}
+    .h1{font-size:42px}
+    .h2{font-size:24px;margin:0 0 8px}
+    .h3{font-size:32px;margin:0 0 8px}
+    .lead{font-size:22px;line-height:1.45;color:var(--text)}
+    .muted{color:var(--muted)}
+    .divider{height:1px;background:#000;opacity:.12}
+    .rule{height:1px;background:#000}
+    .hero-image{height:56vh;min-height:320px;border-radius:var(--radius);object-fit:cover;overflow:hidden}
+    .card{background:#fff;border:1px solid var(--gray-200);border-radius:14px;padding:24px}
+    .card--dark{background:var(--dark-2);border-color:#2a2f35;color:#fff}
+    .kpi{display:flex;flex-direction:column;justify-content:space-between;min-height:220px}
+    .kpi__value{font-size:40px;font-weight:600;line-height:1}
+    .kpi__title{font-size:14px;opacity:.9}
+    .list{margin:0;padding:0;list-style:none}
+    .list li{padding:10px 0;border-bottom:1px solid rgba(0,0,0,.1);display:flex;gap:24px}
+    .badge{display:inline-block;background:#111;color:#fff;border-radius:999px;padding:8px 14px;font-size:14px}
+    .specs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(min-width:768px){.specs{grid-template-columns:repeat(3,1fr)}}
+    .spec{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px}
+    .table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
+    .table th,.table td{padding:16px;border-bottom:1px solid var(--gray-200);text-align:left}
+    .table th{background:#fafafa;font-weight:600}
+    /* responsive “cards” for mobile table */
+    .rows{display:grid;gap:16px}
+    .row-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px}
+    @media(min-width:1024px){.rows{display:none}}
+    @media(min-width:1024px){.table{display:table}}
+    @media(max-width:1023px){.table{display:none}}
+    /* Map */
+    .map{position:relative;height:56vh;min-height:340px;border-radius:16px;overflow:hidden}
+    .map img{width:100%;height:100%;object-fit:cover}
+    .pin{position:absolute;transform:translate(-50%,-100%);width:44px;height:44px;border-radius:50%;border:2px solid #000;background:#fff;display:flex;align-items:center;justify-content:center}
+    /* Footer CTA */
+    .cta{display:grid;gap:24px;align-items:center}
+    @media(min-width:1024px){.cta{grid-template-columns:1fr 1fr}}
+    .price-big{font-size:56px;font-weight:300;color:#D2D8DA}
+    .price-big--cyan{color:var(--cyan);font-weight:600}
+    .footer-note{font-size:12px;color:#9ca3af}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header__bar">
+      <img class="logo" src="logo.svg" alt="Логотип компании" />
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn">Сделать предложение</button>
+        <button class="btn btn--primary">Связаться с менеджером</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2" style="margin-bottom:32px">
+          <div>
+            <h2 class="hero__title">Объект к продаже</h2>
+            <p class="hero__subtitle">Последнее обновление: 10 сентября 2025</p>
+          </div>
+          <div>
+            <h1 class="h1">Пентхаус у моря в Эльвирии (Marbella East)</h1>
+          </div>
+        </div>
+
+        <img class="hero-image" src="hero.jpg" alt="Пентхаус в Эльвирии — вид с террасы" />
+
+        <div class="section" style="padding:40px 0 0">
+          <div class="grid grid-2">
+            <div>
+              <h2 class="h2">Кратко</h2>
+            </div>
+            <div>
+              <p class="lead">
+                Уютный пентхаус 1 спальня на первой линии пляжа с большой солнечной террасой.
+                Закрытая урбанизация с 5 бассейнами, охраной и прямым доступом к песку. Отлично
+                подходит как «второй дом у моря» и как инвестиция под краткосрочную аренду.
+              </p>
+            </div>
+          </div>
+
+          <div style="margin-top:28px" class="divider"></div>
+
+          <!-- Key facts -->
+          <div class="section" style="padding:28px 0 0">
+            <div class="grid specs">
+              <div class="spec"><strong>Цена</strong><br>€315,000</div>
+              <div class="spec"><strong>Спальни</strong><br>1</div>
+              <div class="spec"><strong>Санузлы</strong><br>1</div>
+              <div class="spec"><strong>Интерьер</strong><br>46 м²</div>
+              <div class="spec"><strong>Терраса</strong><br>~78 м²</div>
+              <div class="spec"><strong>Ориентация</strong><br>Юг</div>
+              <div class="spec"><strong>Этаж</strong><br>Верхний</div>
+              <div class="spec"><strong>Энергокласс</strong><br>D</div>
+              <div class="spec"><strong>Референс</strong><br>W-030OP7</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery / Highlights -->
+    <section class="section--lg" style="background:#fff">
+      <div class="container">
+        <div class="grid grid-4">
+          <img class="card" src="gallery1.jpg" alt="Гостиная/кухня">
+          <img class="card" src="gallery2.jpg" alt="Терраса">
+          <img class="card" src="gallery3.jpg" alt="Спальня">
+          <img class="card" src="gallery4.jpg" alt="Пляж рядом">
+        </div>
+
+        <div class="section" style="padding:40px 0 0">
+          <div class="grid grid-2">
+            <div><h2 class="h2">Описание</h2></div>
+            <div>
+              <p style="font-size:18px;line-height:1.7;color:var(--slate)">
+                Планировка 1 спальня / 1 с/у, южная ориентация, огромная частная терраса —
+                идеальна для летних ужинов и релакса. Урбанизация на первой линии: 5 бассейнов
+                (включая детские), охрана, прачечная, лифт, доступ к пляжу. Рядом гольф-клубы,
+                рестораны, супермаркеты.
+              </p>
+              <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px">
+                <span class="badge">Beachfront</span>
+                <span class="badge">5 бассейнов</span>
+                <span class="badge">Охраняемый комплекс</span>
+                <span class="badge">Лифт</span>
+                <span class="badge">Большая терраса</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Prime Location -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2" style="margin-bottom:20px">
+          <div><h2 class="h2">Преимущества объекта</h2></div>
+          <div><h3 class="h3">Топ-локация</h3></div>
+        </div>
+        <p class="lead" style="max-width:1000px">
+          Эльвирия — один из самых востребованных пляжных районов восточной Марбельи: широкий песок,
+          отличная инфраструктура и быстрый доступ к центру по A-7/AP-7. Пешком — пляжи, кафе и чирингито;
+          рядом — Santa María Golf и Greenlife.
+        </p>
+
+        <!-- Map -->
+        <div class="section" style="padding-top:24px">
+          <div class="map">
+            <img src="map.jpg" alt="Карта расположения, Эльвирия" />
+            <!-- Пины (координаты примерные для макета) — показываются только на больших экранах -->
+            <div class="pin" style="left:48%;top:56%"><span style="font-size:12px">★</span></div>
+            <div class="pin" style="left:58%;top:38%"><span style="font-size:12px">G</span></div>
+            <div class="pin" style="left:40%;top:35%"><span style="font-size:12px">S</span></div>
+          </div>
+
+          <div class="section" style="padding:28px 0 0">
+            <div class="grid grid-3">
+              <div class="card"><strong>До пляжа</strong><br>0.1 км</div>
+              <div class="card"><strong>Центр Марбельи</strong><br>10 км</div>
+              <div class="card"><strong>Аэропорт Малага</strong><br>42 км</div>
+              <div class="card"><strong>Гольф</strong><br>1.5 км</div>
+              <div class="card"><strong>Школа</strong><br>2.0 км</div>
+              <div class="card"><strong>Супермаркет</strong><br>0.6 км</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demand / Stats -->
+    <section class="section--dark section--lg">
+      <div class="container">
+        <div class="grid grid-2" style="margin-bottom:20px">
+          <div><h2 class="h2" style="color:#fff">Преимущества объекта</h2></div>
+          <div><h3 class="h3" style="color:#fff">Высокий арендный спрос</h3></div>
+        </div>
+        <p style="font-size:20px;line-height:1.65;opacity:.9">
+          Первая линия + большой поток туристов летом = сильная сезонная выручка. 1-сп форматы с террасой
+          особенно ликвидны в краткосроке.
+        </p>
+
+        <div class="section" style="padding:28px 0 0">
+          <div class="grid grid-4">
+            <div class="card card--dark kpi">
+              <div class="kpi__title">Средний ADR (год)</div>
+              <div class="kpi__value">€150</div>
+              <div class="muted">ориентир для 1-сп beachfront</div>
+            </div>
+            <div class="card card--dark kpi">
+              <div class="kpi__title">Средняя загрузка</div>
+              <div class="kpi__value">~62%</div>
+              <div class="muted">зависит от сезона</div>
+            </div>
+            <div class="card card--dark kpi">
+              <div class="kpi__title">Net (с управлением)</div>
+              <div class="kpi__value">~€17.4k/год</div>
+              <div class="muted">≈5.5% к цене</div>
+            </div>
+            <div class="card card--dark kpi">
+              <div class="kpi__title">Net (самостоятельно)</div>
+              <div class="kpi__value">~€24.2k/год</div>
+              <div class="muted">≈7.7% к цене</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" style="padding:28px 0 0">
+          <div class="card card--dark">
+            <strong>Сезонность (ADR €/загрузка %):</strong>
+            <ul class="list" style="margin-top:12px">
+              <li><span>Янв–Мар:</span><span style="margin-left:auto">€110–120 • 35–45%</span></li>
+              <li><span>Апр–Июн:</span><span style="margin-left:auto">€140–170 • 55–70%</span></li>
+              <li><span>Июл–Авг:</span><span style="margin-left:auto">€190–195 • 80–82%</span></li>
+              <li><span>Сен–Окт:</span><span style="margin-left:auto">€160–140 • 65–55%</span></li>
+              <li><span>Ноя–Дек:</span><span style="margin-left:auto">€120 • 40%</span></li>
+            </ul>
+            <div class="divider" style="margin:16px 0;background:#ffffff22"></div>
+            <span class="muted">Учтены комиссии платформ ~15% и управление ~20% в net-оценке.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Finance -->
+    <section class="section" style="background:#fff">
+      <div class="container">
+        <div class="grid grid-2" style="margin-bottom:20px">
+          <div><h2 class="h2">Финансы покупки</h2></div>
+          <div><h3 class="h3">Ориентировочный расчёт</h3></div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h4 style="margin:0 0 12px">Покупка</h4>
+            <ul class="list">
+              <li><span>Цена</span><span style="margin-left:auto">€315,000</span></li>
+              <li><span>ITP (7%)</span><span style="margin-left:auto">~€22,050</span></li>
+              <li><span>Нотариус + Регистрация</span><span style="margin-left:auto">~€2,300</span></li>
+              <li><span>Юр. сопровождение</span><span style="margin-left:auto">~€1,500</span></li>
+              <li><span>CapEx (мебель/апгрейд)</span><span style="margin-left:auto">~€20,000</span></li>
+              <li style="font-weight:600"><span>Итого инвестиция</span><span style="margin-left:auto">~€360,850</span></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4 style="margin:0 0 12px">Ипотека (пример)</h4>
+            <ul class="list">
+              <li><span>LTV</span><span style="margin-left:auto">60%</span></li>
+              <li><span>Ставка</span><span style="margin-left:auto">~3.8% фикс.</span></li>
+              <li><span>Срок</span><span style="margin-left:auto">25 лет</span></li>
+              <li><span>Ежемес. платёж</span><span style="margin-left:auto">~€1,003</span></li>
+              <li><span>Точка безубытка по загрузке</span><span style="margin-left:auto">~42%</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section" style="padding:28px 0 0">
+          <div class="card">
+            <h4 style="margin:0 0 8px">Годовые расходы (ориентир)</h4>
+            <p class="muted" style="margin:0">
+              Комьюнити €2,160 • Коммуналка €1,200 • IBI €600 • Basura €180 • Страховка €180 • Обслуживание €500
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparables + Legal -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2">
+          <div>
+            <h2 class="h2">Сравнимые объекты</h2>
+            <div class="card" style="margin-top:12px">
+              <ul class="list">
+                <li><span>Romana Playa • 1 спальня ~40 м²</span><span style="margin-left:auto">~€299k</span></li>
+                <li><span>Beachside studio • ~37–40 м²</span><span style="margin-left:auto">€275–299k</span></li>
+              </ul>
+              <p class="muted" style="margin:12px 0 0">Радиус ~1 км; часто меньшие террасы.</p>
+            </div>
+          </div>
+          <div>
+            <h2 class="h2">Правовой чек-лист (краткосрок)</h2>
+            <div class="card" style="margin-top:12px">
+              <ul class="list">
+                <li>Регистрация VFT в Андалусии обязательна.</li>
+                <li>С 03.04.2025: решение сообщества (3/5 голосов/квот) по туристической аренде.</li>
+                <li>Возможна надбавка к общим расходам для «туристических» лотов.</li>
+                <li>Проверьте правила конкретной урбанизации до расчёта ROI.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Pricing / CTA -->
+    <section class="section--dark section--lg">
+      <div class="container">
+        <div class="cta">
+          <div class="card card--dark" style="background:transparent;border-color:#2b2f33">
+            <div style="margin-bottom:6px;color:#cbd5e1">Цена объекта</div>
+            <div class="price-big">€315,000</div>
+            <div class="muted">Комиссии покупателя включены (если применимо)</div>
+          </div>
+          <div class="card card--dark" style="background:transparent;border-color:#2b2f33;text-align:right">
+            <div style="margin-bottom:6px;color:var(--cyan)">Потенциальный чистый доход</div>
+            <div class="price-big price-big--cyan">~€17.4k–24.2k/год</div>
+            <div class="muted">в зависимости от управления</div>
+          </div>
+        </div>
+
+        <div class="section" style="padding-top:28px">
+          <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
+            <button class="btn btn--cyan">Сделать предложение</button>
+            <button class="btn btn--primary">Связаться с менеджером</button>
+          </div>
+        </div>
+
+        <p class="footer-note" style="text-align:center;margin-top:16px">
+          Данные носят ознакомительный характер и не являются офертой. Доходность не гарантируется.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact / Developer -->
+    <section class="section" style="background:#fff">
+      <div class="container">
+        <div class="grid grid-2">
+          <div>
+            <h2 class="h2">Агент</h2>
+            <img src="agent.jpg" alt="Ваш агент" style="width:120px;height:120px;border-radius:14px;object-fit:cover;margin:12px 0">
+            <p><strong>Имя:</strong> Agent Name<br><strong>Компания:</strong> YourCompany</p>
+            <p><strong>Тел.:</strong> +34 600 000 000<br><strong>Email:</strong> agent@example.com</p>
+            <p><a href="https://yourcompany.com" target="_blank" rel="noopener">yourcompany.com</a></p>
+          </div>
+          <div>
+            <h2 class="h2">QR / Ссылка на листинг</h2>
+            <div class="card" style="display:flex;align-items:center;gap:16px">
+              <img src="qr.png" alt="QR код на листинг" style="width:144px;height:144px;border:1px solid var(--gray-200);border-radius:8px">
+              <div>
+                <p style="margin:0 0 8px">Сканируйте QR или перейдите по ссылке:</p>
+                <a href="https://www.marbella-ev.com/properties/elviria/penthouses/W-030OP7" target="_blank" rel="noopener">
+                  Открыть листинг W-030OP7
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
