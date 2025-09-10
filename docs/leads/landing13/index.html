@@ -1,0 +1,232 @@
+[
+  {
+    "version": "1.0",
+    "deck": {
+      "id": "de_0001",
+      "title": "Property Presentation",
+      "subtitle": null,
+      "language": "ru",
+      "currency": "EUR",
+      "units": { "area": "m2", "distance": "km" },
+      "theme": {
+        "brand": "YourBrand",
+        "palette": {
+          "primary": "#0E3A8A",
+          "secondary": "#22A6B3",
+          "accent": "#F59E0B",
+          "bg": "#FFFFFF",
+          "text": "#0F172A"
+        },
+        "font_family": { "heading": "Inter", "body": "Inter" },
+        "watermark": null
+      },
+      "export": {
+        "format": "PDF",
+        "size": "16:9",
+        "dpi": 150,
+        "include_page_numbers": true,
+        "file_name": "property-presentation.pdf"
+      },
+      "slide_order": [
+        "cover","highlights","gallery","specs","floorplan","map","amenities",
+        "lifestyle","investment_case","rental_forecast","long_term","comps",
+        "finance","renovation","neighborhood","cta","disclaimer"
+      ]
+    },
+
+    "property": "=[object Object]",
+    "location": "=[object Object]",
+    "media": "=[object Object]",
+    "market": "=[object Object]",
+    "comps": "=[object Object]",
+    "agent": "=[object Object]",
+    "cta": "=[object Object]",
+    "legal": "=[object Object]",
+    "analytics": "=[object Object]",
+
+    "rental": "=[object Object]",
+
+    "finance": {
+      "purchase": "=[object Object]",
+      "operating_costs_annual": "=[object Object]",
+      "derived": {
+        "total_investment": "=360850",
+        "monthly_payment": "=976.8589015954725",
+        "breakeven_occ_pct": "=49.17816965929593",
+        "net_yield_short_term_base": "=4.827831746031746",
+        "net_yield_long_term": "=5.123809523809523"
+      }
+    },
+
+    "narrative": {
+      "cover_title": "1-bed Beachfront Penthouse",
+      "cover_subtitle": "Elviria, Marbella",
+      "highlights_bullets": [
+        "Пляж в 0.1 км",
+        "1 спальня / 1 с/у",
+        "Терраса 78 м², южная ориентация"
+      ],
+      "investment_pitch": "=Beachfront объект с сильным спросом в пиковые месяцы."
+    },
+
+    "slides": [
+      {
+        "id": "cover",
+        "type": "cover",
+        "visible": true,
+        "data": {
+          "title": "{{property.title}}",
+          "subtitle": "{{location.address.area}}, {{location.address.city}}",
+          "badges": [
+            "1 BR",
+            "1 BA",
+            "46 m² + 78 m² terrace"
+          ],
+          "price_tag": {
+            "value": "=315000",
+            "currency": "=EUR"
+          },
+          "background_image": "https://cdn.example.com/img/cover.jpg"
+        }
+      },
+      {
+        "id": "highlights",
+        "type": "highlights",
+        "visible": true,
+        "data": { "bullets": "=Пляж в {{location.distances_km.beach}} км,{{property.rooms.bedrooms}} спальня / {{property.rooms.bathrooms}} с/у,Терраса {{property.areas.terrace_m2}} м², южная ориентация" }
+      },
+      {
+        "id": "gallery",
+        "type": "gallery",
+        "visible": true,
+        "data": { "images": "=[object Object],[object Object]" }
+      },
+      {
+        "id": "specs",
+        "type": "specs",
+        "visible": true,
+        "data": {
+          "table": [
+            ["Тип","penthouse"],
+            ["Площадь (интерьер)","46 m²"],
+            ["Терраса","78 m²"],
+            ["Ориентация","south"],
+            ["Энергокласс","D"]
+          ]
+        }
+      },
+      {
+        "id": "floorplan",
+        "type": "floorplan",
+        "visible": true,
+        "data": { "images": "=[object Object]" }
+      },
+      {
+        "id": "map",
+        "type": "map",
+        "visible": true,
+        "data": {
+          "coordinates": "=[object Object]",
+          "pois": "=[object Object],[object Object]"
+        }
+      },
+      {
+        "id": "amenities",
+        "type": "amenities",
+        "visible": true,
+        "data": {
+          "icons": ["pool_community","security_24h","gated","lift","laundry","wifi_common"]
+        }
+      },
+      {
+        "id": "lifestyle",
+        "type": "lifestyle",
+        "visible": false,
+        "data": { "image": null, "caption": null }
+      },
+      {
+        "id": "investment_case",
+        "type": "kpis",
+        "visible": true,
+        "data": {
+          "kpis": [
+            { "label": "Цена", "value": "315000 EUR" },
+            { "label": "Гросс-доход (ST)", "value": "base model" },
+            { "label": "Net yield (LT)", "value": "%" }
+          ]
+        }
+      },
+      {
+        "id": "rental_forecast",
+        "type": "chart",
+        "visible": true,
+        "data": {
+          "title": "Краткосрок: ADR и загрузка по месяцам",
+          "series": [
+            { "name": "ADR", "unit": "€", "values": "=[object Object]" },
+            { "name": "Occupancy", "unit": "%", "values": "=[object Object]" }
+          ]
+        }
+      },
+      {
+        "id": "long_term",
+        "type": "text",
+        "visible": true,
+        "data": {
+          "title": "Долгосрок",
+          "bullets": [
+            "Оценка аренды: 1500 €/мес",
+            "Вакантность: 0.05",
+            "Депозит: 2 мес"
+          ]
+        }
+      },
+      {
+        "id": "comps",
+        "type": "table",
+        "visible": true,
+        "data": { "rows": "=[object Object]" }
+      },
+      {
+        "id": "finance",
+        "type": "finance_summary",
+        "visible": true,
+        "data": {
+          "purchase": "=[object Object]",
+          "derived": "=[object Object]"
+        }
+      },
+      {
+        "id": "renovation",
+        "type": "budget",
+        "visible": false,
+        "data": { "capex": "=[object Object]" }
+      },
+      {
+        "id": "neighborhood",
+        "type": "text",
+        "visible": false,
+        "data": {
+          "title": "Окружение",
+          "bullets": ["Гольф","Рестораны","Пляжи"]
+        }
+      },
+      {
+        "id": "cta",
+        "type": "contact",
+        "visible": true,
+        "data": {
+          "agent": "=[object Object]",
+          "primary_cta": "=[object Object]",
+          "secondary_cta": "=[object Object]"
+        }
+      },
+      {
+        "id": "disclaimer",
+        "type": "disclaimer",
+        "visible": true,
+        "data": { "text": "=Все данные предоставлены в иллюстративных целях и не являются офертой.,Доходность не гарантируется и зависит от управления и рынка." }
+      }
+    ]
+  }
+]
