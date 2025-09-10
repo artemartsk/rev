@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Property Presentation — Эльвирия</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* палитра берётся из deck.theme.palette; ниже дефолт на случай отсутствия данных */
+    --primary:#0E3A8A;
+    --secondary:#22A6B3;
+    --accent:#F59E0B;
+    --bg:#FFFFFF;
+    --text:#0F172A;
+
+    --navian-gray-light:#E4E9EB;
+    --navian-gray-medium:#2A2F35;
+    --navian-gray-dark:#0F1112;
+    --navian-cyan:#61F3F3;
+    --navian-gray-text:#D2D8DA;
+
+    --black:#0b0b0b;
+    --muted:#6b7280;
+    --slate:#374151;
+    --gray-200:#e5e7eb;
+
+    --radius:16px;
+    --container:1440px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--navian-gray-light)}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+  .section{padding:60px 0}
+  .section--lg{padding:80px 0}
+  .section--dark{background:var(--navian-gray-dark);color:#fff}
+  .section--medium{background:var(--navian-gray-medium);color:#fff}
+  .grid{display:grid;gap:24px}
+  .grid-2{grid-template-columns:1fr;gap:32px}
+  .grid-3{grid-template-columns:1fr;gap:24px}
+  .grid-4{grid-template-columns:1fr;gap:24px}
+  @media(min-width:1024px){
+    .grid-2{grid-template-columns:477px 1fr}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+  }
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:56px;padding:0 24px;border:1.5px solid var(--black);border-radius:10px;background:#fff;color:var(--black);cursor:pointer;transition:.2s;text-decoration:none}
+  .btn:hover{background:var(--black);color:#fff}
+  .btn--primary{background:#000;color:#fff;border-color:#000}
+  .btn--primary:hover{background:#222}
+  .btn--cyan{border-color:var(--navian-cyan);color:var(--navian-cyan);background:transparent}
+  .btn--cyan:hover{background:var(--navian-cyan);color:#000}
+  header{background:var(--navian-gray-light)}
+  .header__bar{display:flex;flex-direction:column;gap:16px;justify-content:space-between;align-items:flex-start;padding:24px 0}
+  @media(min-width:640px){.header__bar{flex-direction:row;align-items:center}}
+  .logo{height:32px}
+  .hero__title{font-weight:400;line-height:1.1;margin:0 0 12px;font-size:24px}
+  .hero__subtitle{color:rgba(0,0,0,.55);font-size:13px;margin:0}
+  .h1{font-weight:400;font-size:56px;line-height:1.1;margin:0}
+  @media(min-width:1024px){.h1{font-size:72px}}
+  .h2{font-size:24px;margin:0 0 8px}
+  .h3{font-size:40px;margin:0 0 8px}
+  .lead{font-size:22px;line-height:1.45;color:var(--text)}
+  .muted{color:var(--muted)}
+  .divider{height:1px;background:#000;opacity:.12}
+  .hero-image{height:56vh;min-height:320px;border-radius:var(--radius);object-fit:cover;overflow:hidden}
+  .card{background:#fff;border:1px solid var(--gray-200);border-radius:14px;padding:24px}
+  .card--dark{background:var(--navian-gray-medium);border-color:#2a2f35;color:#fff}
+  .kpi{display:flex;flex-direction:column;justify-content:space-between;min-height:220px}
+  .kpi__value{font-size:40px;font-weight:600;line-height:1}
+  .kpi__title{font-size:14px;opacity:.9}
+  .list{margin:0;padding:0;list-style:none}
+  .list li{padding:10px 0;border-bottom:1px solid rgba(0,0,0,.1);display:flex;gap:24px}
+  .badge{display:inline-block;background:#111;color:#fff;border-radius:999px;padding:8px 14px;font-size:14px}
+  .specs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(min-width:768px){.specs{grid-template-columns:repeat(3,1fr)}}
+  .spec{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px}
+  .table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
+  .table th,.table td{padding:16px;border-bottom:1px solid var(--gray-200);text-align:left}
+  .table th{background:#fafafa;font-weight:600}
+  /* Map */
+  .map{position:relative;height:56vh;min-height:340px;border-radius:16px;overflow:hidden;background:#ccc}
+  .map iframe{border:0;width:100%;height:100%}
+  /* Footer CTA */
+  .cta{display:grid;gap:24px;align-items:center}
+  @media(min-width:1024px){.cta{grid-template-columns:1fr 1fr}}
+  .price-big{font-size:56px;font-weight:300;color:var(--navian-gray-text)}
+  .price-big--cyan{color:var(--navian-cyan);font-weight:600}
+  .footer-note{font-size:12px;color:#9ca3af}
+</style>
+</head>
+<body>
+
+<!-- ====== HEADER ====== -->
+<header>
+  <div class="container header__bar">
+    <img class="logo" id="logo" src="" alt="Логотип" />
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a id="cta-offer" class="btn" target="_blank" rel="noopener">Make An Offer</a>
+      <a id="cta-contact" class="btn btn--primary" target="_blank" rel="noopener">Contact Sales Manager</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ====== HERO ====== -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2" style="margin-bottom:32px">
+        <div>
+          <h2 class="hero__title">Property for sale</h2>
+          <p class="hero__subtitle" id="last-update">Last update</p>
+        </div>
+        <div>
+          <h1 class="h1" id="hero-title">Заголовок</h1>
+        </div>
+      </div>
+
+      <img id="hero-image" class="hero-image" src="" alt="Hero" />
+
+      <div class="section" style="padding:40px 0 0">
+        <div class="grid grid-2">
+          <div>
+            <h2 class="h2">Overview</h2>
+          </div>
+          <div>
+            <p class="lead" id="overview">
+              <!-- narrative/investment -->
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top:28px" class="divider"></div>
+
+        <!-- Key facts -->
+        <div class="section" style="padding:28px 0 0">
+          <div class="grid specs" id="specs-grid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GALLERY ====== -->
+  <section class="section--lg" style="background:#fff">
+    <div class="container">
+      <div class="grid grid-4" id="gallery-grid"></div>
+
+      <div class="section" style="padding:40px 0 0">
+        <div class="grid grid-2">
+          <div><h2 class="h2">Описание</h2></div>
+          <div>
+            <p style="font-size:18px;line-height:1.7;color:var(--slate)" id="long-desc"></p>
+            <div id="badges" style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== LOCATION ====== -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2" style="margin-bottom:20px">
+        <div><h2 class="h2">Project Advantages</h2></div>
+        <div><h3 class="h3">Prime Location</h3></div>
+      </div>
+      <p class="lead" id="location-lead"></p>
+
+      <!-- Map -->
+      <div class="section" style="padding-top:24px">
+        <div class="map">
+          <iframe id="map" loading="lazy"></iframe>
+        </div>
+
+        <div class="section" style="padding:28px 0 0">
+          <div class="grid grid-3" id="distances-cards"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== DEMAND / KPIs ====== -->
+  <section class="section--dark section--lg">
+    <div class="container">
+      <div class="grid grid-2" style="margin-bottom:20px">
+        <div><h2 class="h2" style="color:#fff">Project Advantages</h2></div>
+        <div><h3 class="h3" style="color:#fff">High Demand</h3></div>
+      </div>
+      <p style="font-size:20px;line-height:1.65;opacity:.9" id="demand-copy">
+        Beachfront формат с сильной сезонной выручкой.
+      </p>
+
+      <div class="section" style="padding:28px 0 0">
+        <div class="grid grid-4">
+          <div class="card card--dark kpi">
+            <div class="kpi__title">Средний ADR (год)</div>
+            <div class="kpi__value" id="kpi-adr">€—</div>
+            <div class="muted">ориентир по 1-сп beachfront</div>
+          </div>
+          <div class="card card--dark kpi">
+            <div class="kpi__title">Средняя загрузка</div>
+            <div class="kpi__value" id="kpi-occ">—%</div>
+            <div class="muted">зависит от сезона</div>
+          </div>
+          <div class="card card--dark kpi">
+            <div class="kpi__title">Net (с управлением)</div>
+            <div class="kpi__value" id="kpi-net-mgmt">—/год</div>
+            <div class="muted" id="kpi-yld-mgmt">≈—% к цене</div>
+          </div>
+          <div class="card card--dark kpi">
+            <div class="kpi__title">Net (самостоятельно)</div>
+            <div class="kpi__value" id="kpi-net-self">—/год</div>
+            <div class="muted" id="kpi-yld-self">≈—% к цене</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FINANCE ====== -->
+  <section class="section" style="background:#fff">
+    <div class="container">
+      <div class="grid grid-2" style="margin-bottom:20px">
+        <div><h2 class="h2">Finance</h2></div>
+        <div><h3 class="h3">Ориентировочный расчёт</h3></div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h4 style="margin:0 0 12px">Покупка</h4>
+          <ul class="list" id="purchase-list"></ul>
+        </div>
+        <div class="card">
+          <h4 style="margin:0 0 12px">Ипотека (пример)</h4>
+          <ul class="list" id="mortgage-list"></ul>
+        </div>
+      </div>
+
+      <div class="section" style="padding:28px 0 0">
+        <div class="card">
+          <h4 style="margin:0 0 8px">Годовые расходы (ориентир)</h4>
+          <p class="muted" id="opex-inline" style="margin:0"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== COMPS & LEGAL ====== -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div>
+          <h2 class="h2">Сравнимые объекты</h2>
+          <div class="card" style="margin-top:12px">
+            <table class="table" id="comps-table">
+              <thead>
+                <tr>
+                  <th>Адрес</th><th>Дист., км</th><th>Цена</th><th>€ / м²</th><th>Сп/Су</th><th>Интерьер, м²</th><th>Дата</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <p class="muted" style="margin:12px 0 0">Источник: comps из входных данных.</p>
+          </div>
+        </div>
+        <div>
+          <h2 class="h2">Правовой чек-лист</h2>
+          <div class="card" style="margin-top:12px">
+            <ul class="list" id="legal-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FINAL CTA ====== -->
+  <section class="section--dark section--lg">
+    <div class="container">
+      <div class="cta">
+        <div class="card card--dark" style="background:transparent;border-color:#2b2f33">
+          <div style="margin-bottom:6px;color:#cbd5e1">Цена объекта</div>
+          <div class="price-big" id="final-price">€—</div>
+          <div class="muted">Buyer’s fee included (если применимо)</div>
+        </div>
+        <div class="card card--dark" style="background:transparent;border-color:#2b2f33;text-align:right">
+          <div style="margin-bottom:6px;color:var(--navian-cyan)">Потенциальный чистый доход</div>
+          <div class="price-big price-big--cyan" id="final-income">—</div>
+          <div class="muted">в зависимости от управления</div>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top:28px">
+        <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
+          <a id="cta-offer-2" class="btn btn--cyan" target="_blank" rel="noopener">Сделать предложение</a>
+          <a id="cta-contact-2" class="btn btn--primary" target="_blank" rel="noopener">Связаться с менеджером</a>
+        </div>
+      </div>
+
+      <p class="footer-note" id="disclaimer" style="text-align:center;margin-top:16px"></p>
+    </div>
+  </section>
+
+  <!-- ====== AGENT / QR ====== -->
+  <section class="section" style="background:#fff">
+    <div class="container">
+      <div class="grid grid-2">
+        <div>
+          <h2 class="h2">Агент</h2>
+          <div class="card" style="display:flex;gap:16px;align-items:center">
+            <img id="agent-logo" src="" alt="Agent Logo" style="width:96px;height:96px;object-fit:contain" />
+            <div>
+              <p style="margin:0" id="agent-name"></p>
+              <p style="margin:0" id="agent-contacts"></p>
+              <div style="display:flex;gap:12px;margin-top:8px">
+                <a id="agent-phone" class="btn" href="#">Позвонить</a>
+                <a id="agent-whatsapp" class="btn" href="#" target="_blank" rel="noopener">WhatsApp</a>
+                <a id="agent-email" class="btn" href="#">Email</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 class="h2">Ссылка на листинг</h2>
+          <div class="card" style="display:flex;align-items:center;gap:16px">
+            <img src="qr.png" alt="QR код (замените при необходимости)" style="width:144px;height:144px;border:1px solid var(--gray-200);border-radius:8px">
+            <div>
+              <p style="margin:0 0 8px">Перейти на страницу объекта:</p>
+              <a id="listing-url" href="#" target="_blank" rel="noopener">Открыть листинг</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* ==== ВСТАВЛЕННЫЕ ВХОДНЫЕ ДАННЫЕ (как ты прислал) ==== */
+const incomingData = [
+  {
+    "LeadInfo": [
+      {"key":"agent","value":"{\"name\":\"Agent Name\",\"company\":\"YourCompany\",\"license\":\"XXXX\",\"logo_url\":\"https://cdn.example.com/logo.svg\",\"contacts\":{\"phone\":\"+34 600 000 000\",\"email\":\"agent@example.com\",\"website\":\"https://yourcompany.com\",\"whatsapp\":\"https://wa.me/34600000000\"}}"},
+      {"key":"analytics","value":"{\"doc_id\":\"deck_2025_0001\",\"utm\":{\"source\":\"crm\",\"campaign\":\"autogen_decks\"}}"},
+      {"key":"comps","value":"[{\"id\":\"comp_001\",\"address\":\"Romana Playa, Elviria\",\"distance_km\":0.2,\"price\":299000,\"price_per_m2\":7400,\"bedrooms\":1,\"bathrooms\":1,\"interior_m2\":40,\"date\":\"2025-06-15\",\"url\":\"https://example.com/comp1\",\"notes\":\"Меньшая терраса.\"}]"},
+      {"key":"cta","value":"{\"primary\":{\"text\":\"Запросить просмотр\",\"url\":\"https://yourcompany.com/book\"},\"secondary\":{\"text\":\"Скачать PDF\",\"url\":\"https://yourcompany.com/download\"}}"},
+      {"key":"deck","value":"{\"id\":\"de_0001\",\"title\":\"Property Presentation\",\"language\":\"ru\",\"currency\":\"EUR\",\"units\":{\"area\":\"m2\",\"distance\":\"km\"},\"theme\":{\"brand\":\"YourBrand\",\"palette\":{\"primary\":\"#0E3A8A\",\"secondary\":\"#22A6B3\",\"accent\":\"#F59E0B\",\"bg\":\"#FFFFFF\",\"text\":\"#0F172A\"},\"font_family\":{\"heading\":\"Inter\",\"body\":\"Inter\"}},\"export\":{\"format\":\"PDF\",\"size\":\"16:9\",\"dpi\":150,\"include_page_numbers\":true,\"file_name\":\"property-presentation.pdf\"},\"slide_order\":[\"cover\",\"highlights\",\"gallery\",\"specs\",\"floorplan\",\"map\",\"amenities\",\"lifestyle\",\"investment_case\",\"rental_forecast\",\"long_term\",\"comps\",\"finance\",\"renovation\",\"neighborhood\",\"cta\",\"disclaimer\"]}"},
+      {"key":"finance","value":"{\"purchase\":{\"price\":315000,\"taxes\":{\"itp_pct\":0.07,\"ajd_pct\":0,\"vat_pct\":0,\"notary\":1500,\"registry\":800,\"legal\":1500},\"capex\":{\"renovation\":10000,\"furnishing\":7000,\"appliances\":3000,\"other\":0},\"mortgage\":{\"ltv_pct\":0.6,\"rate_pct\":3.8,\"term_years\":25,\"type\":\"fixed\",\"origination_fee_pct\":0.005}},\"derived\":{}}"},
+      {"key":"legal","value":"{\"disclaimers\":[\"Все данные предоставлены в иллюстративных целях и не являются офертой.\",\"Доходность не гарантируется и зависит от управления и рынка.\"],\"regulatory_notes\":[\"Для краткосрочной аренды требуется регистрация (VFT) и разрешение сообщества (если применимо).\"],\"data_sources\":[\"MLS\",\"порталы\",\"оценка команды\"]}"},
+      {"key":"location","value":"{\"address\":{\"line1\":\"Av. de las Albarizas 1\",\"area\":\"Elviria\",\"city\":\"Marbella\",\"municipality\":\"Marbella\",\"province\":\"Málaga\",\"country\":\"Spain\",\"postal_code\":\"29604\"},\"coordinates\":{\"lat\":36.4912,\"lng\":-4.7731},\"distances_km\":{\"beach\":0.1,\"city_center\":10,\"airport\":42,\"golf\":1.5,\"school\":2,\"supermarket\":0.6},\"transport\":[\"bus\",\"car\"],\"pois\":[{\"name\":\"Santa María Golf\",\"type\":\"golf\",\"distance_km\":1.5},{\"name\":\"Nikki Beach\",\"type\":\"beach_club\",\"distance_km\":0.5}]}"},
+      {"key":"market","value":"{\"segment\":[\"beachside\",\"holiday-let\"],\"avg_price_per_m2_area\":4450,\"trend_notes\":\"Стабильный спрос на восточной Марбелье.\",\"regulatory\":{\"short_term_allowed\":\"unknown\",\"vft_required\":true}}"},
+      {"key":"media","value":"{\"cover\":{\"url\":\"https://cdn.example.com/img/cover.jpg\"},\"gallery\":[{\"url\":\"https://cdn.example.com/img/1.jpg\",\"caption\":\"Terrace\"},{\"url\":\"https://cdn.example.com/img/2.jpg\",\"caption\":\"Living room\"}],\"floorplans\":[{\"url\":\"https://cdn.example.com/floorplan/level1.png\",\"caption\":\"Main level\"}] }"},
+      {"key":"narrative","value":"{\"cover_title\":\"\",\"cover_subtitle\":\", \",\"highlights_bullets\":[\"Пляж в  км\",\" спальня /  с/у\",\"Терраса  м², южная ориентация\"],\"investment_pitch\":\"Beachfront объект с сильным спросом в пиковые месяцы.\"}"},
+      {"key":"property","value":"{\"id\":\"prop_0001\",\"ref_code\":\"W-XXXXXXX\",\"title\":\"1-bed Beachfront Penthouse\",\"description\":\"Пентхаус на первой линии пляжа с большой террасой.\",\"property_type\":\"penthouse\",\"status\":\"resale\",\"pricing\":{\"asking\":315000,\"currency\":\"EUR\"},\"areas\":{\"interior_m2\":46,\"built_m2\":124,\"terrace_m2\":78},\"rooms\":{\"bedrooms\":1,\"bathrooms\":1},\"features\":{\"orientation\":\"south\",\"views\":[\"sea\",\"garden\"],\"condition\":\"good\",\"energy_rating\":\"D\",\"floor\":\"top\",\"parking_spaces\":0,\"storage_rooms\":0,\"pool\":\"community\",\"community\":\"gated\",\"pets_allowed\":true},\"fees\":{\"community_monthly\":180,\"ibi_annual\":600,\"basura_annual\":180},\"year_built\":1989,\"url\":\"https://example.com/listing\",\"tags\":[\"beachfront\",\"investment\",\"holiday-home\"]}"},
+      {"key":"rental","value":"{\"short_term\":{\"license_status\":\"unknown\",\"platforms\":[\"airbnb\",\"booking\"],\"adr_by_month\":{\"jan\":110,\"feb\":110,\"mar\":120,\"apr\":140,\"may\":150,\"jun\":170,\"jul\":190,\"aug\":195,\"sep\":160,\"oct\":140,\"nov\":120,\"dec\":120},\"occ_by_month_pct\":{\"jan\":0.35,\"feb\":0.38,\"mar\":0.45,\"apr\":0.55,\"may\":0.6,\"jun\":0.7,\"jul\":0.8,\"aug\":0.82,\"sep\":0.65,\"oct\":0.55,\"nov\":0.4,\"dec\":0.4},\"fees\":{\"management_pct\":0.2,\"platform_pct\":0.15,\"cleaning_per_stay\":70,\"linen_per_stay\":20},\"operating_costs_annual\":{\"community_fees\":2160,\"ibi\":600,\"basura\":180,\"insurance\":180,\"utilities\":1200,\"maintenance\":500,\"other\":0},\"scenarios\":[{\"name\":\"base\",\"adr_multiplier\":1,\"occ_multiplier\":1},{\"name\":\"conservative\",\"adr_multiplier\":0.85,\"occ_multiplier\":0.85},{\"name\":\"optimistic\",\"adr_multiplier\":1.15,\"occ_multiplier\":1.1}]},\"long_term\":{\"monthly_rent_estimate\":1500,\"vacancy_rate_pct\":0.05,\"contract_type\":\"11m\",\"furnished\":true,\"expenses_included\":[\"community_fees\"],\"deposit_months\":2,\"derived\":{}}}"},
+      {"key":"slides","value":"[{\"id\":\"cover\",\"type\":\"cover\",\"visible\":true},{\"id\":\"gallery\",\"type\":\"gallery\",\"visible\":true}]"},
+      {"key":"version","value":"1.0"}
+    ]
+  }
+];
+
+/* ==== Утилиты ==== */
+const getKV = (arr) => {
+  const obj = {};
+  for (const item of arr) {
+    try { obj[item.key] = JSON.parse(item.value); }
+    catch { obj[item.key] = item.value; }
+  }
+  return obj;
+};
+const fmtMoney = (val, currency="EUR") => new Intl.NumberFormat('ru-RU', { style:'currency', currency }).format(val);
+const fmtNum = (val) => new Intl.NumberFormat('ru-RU').format(val);
+const daysIn = [31,28,31,30,31,30,31,31,30,31,30,31];
+const monthOrder = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
+const titleCase = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+/* ==== Нормализация входа ==== */
+const { LeadInfo } = incomingData[0];
+const data = getKV(LeadInfo);
+
+// Тема → CSS переменные
+if (data.deck?.theme?.palette){
+  const p = data.deck.theme.palette;
+  const root = document.documentElement;
+  root.style.setProperty('--primary', p.primary);
+  root.style.setProperty('--secondary', p.secondary);
+  root.style.setProperty('--accent', p.accent);
+  root.style.setProperty('--bg', p.bg);
+  root.style.setProperty('--text', p.text);
+}
+
+// Простая подстановка 
+const tpl = (str, scope) => String(str).replace(/\{\{\s*([^}]+)\s*\}\}/g, (_, path) => {
+  const parts = path.split('.');
+  let v = scope;
+  for (const k of parts){
+    if (v && (k.endsWith(']') || k.includes('['))) {
+      // поддержка массивов вида foo[0].bar
+      const segs = k.split(/\[|\]/).filter(Boolean);
+      let cur = v;
+      for (const s of segs){
+        cur = cur[s];
+        if (cur===undefined) break;
+      }
+      v = cur;
+    } else {
+      v = v?.[k];
+    }
+  }
+  return (v ?? '');
+});
+
+// Собираем narrative
+const scope = { agent:data.agent, analytics:data.analytics, comps:data.comps, cta:data.cta, deck:data.deck, finance:data.finance, legal:data.legal, location:data.location, market:data.market, media:data.media, narrative:data.narrative, property:data.property, rental:data.rental };
+const coverTitle = tpl(data.narrative.cover_title, scope);
+const coverSubtitle = tpl(data.narrative.cover_subtitle, scope);
+const bullets = (data.narrative.highlights_bullets || []).map(b => tpl(b, scope));
+
+/* ==== HERO ==== */
+document.getElementById('logo').src = data.agent.logo_url || '';
+document.getElementById('cta-offer').href = data.cta?.primary?.url || '#';
+document.getElementById('cta-offer').textContent = data.cta?.primary?.text || 'Make An Offer';
+document.getElementById('cta-contact').href = data.agent?.contacts?.website || '#';
+
+const today = new Date();
+const ruDate = today.toLocaleDateString('ru-RU',{ day:'2-digit', month:'long', year:'numeric' });
+document.getElementById('last-update').textContent = `Last update ${ruDate}`;
+
+document.getElementById('hero-title').textContent = coverTitle || data.property.title;
+document.getElementById('hero-image').src = data.media?.cover?.url || 'https://via.placeholder.com/1600x900?text=Cover';
+
+/* ==== OVERVIEW ==== */
+document.getElementById('overview').textContent = data.narrative.investment_pitch || data.property.description;
+
+/* ==== SPECS ==== */
+const specsGrid = document.getElementById('specs-grid');
+const specs = [
+  ['Цена', fmtMoney(data.property.pricing.asking, data.property.pricing.currency || data.deck.currency)],
+  ['Спальни', data.property.rooms.bedrooms],
+  ['Санузлы', data.property.rooms.bathrooms],
+  ['Интерьер', `${data.property.areas.interior_m2} м²`],
+  ['Терраса', `${data.property.areas.terrace_m2} м²`],
+  ['Ориентация', titleCase(data.property.features.orientation)],
+  ['Этаж', titleCase(data.property.features.floor)],
+  ['Энергокласс', data.property.features.energy_rating],
+  ['Референс', data.property.ref_code]
+];
+for (const [k,v] of specs){
+  const d = document.createElement('div');
+  d.className='spec';
+  d.innerHTML = `<strong>${k}</strong><br>${v}`;
+  specsGrid.appendChild(d);
+}
+
+/* ==== GALLERY ==== */
+const gallery = data.media?.gallery || [];
+const galleryGrid = document.getElementById('gallery-grid');
+for (let i=0;i<Math.max(4, gallery.length);i++){
+  const g = gallery[i];
+  if (!g) continue;
+  const img = document.createElement('img');
+  img.className='card';
+  img.src = g.url;
+  img.alt = g.caption || `photo_${i+1}`;
+  galleryGrid.appendChild(img);
+}
+document.getElementById('long-desc').textContent = data.property.description;
+const badges = document.getElementById('badges');
+(bullets.length ? bullets : (data.property.tags||[])).forEach(b=>{
+  const span = document.createElement('span'); span.className='badge'; span.textContent = b; badges.appendChild(span);
+});
+
+/* ==== LOCATION ==== */
+const locLead = `Район ${data.location.address.area} (${data.location.address.city}). Поблизости: ${data.location.pois.map(p=>p.name).join(', ')}.`;
+document.getElementById('location-lead').textContent = locLead;
+
+const lat = data.location.coordinates.lat, lng = data.location.coordinates.lng;
+const bboxPad = 0.01;
+const bbox = [lng-bboxPad, lat-bboxPad, lng+bboxPad, lat+bboxPad].join('%2C');
+document.getElementById('map').src = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lng}`;
+
+const dCards = document.getElementById('distances-cards');
+const dist = data.location.distances_km;
+[
+  ['До пляжа', dist.beach+' км'],
+  ['Центр Марбельи', dist.city_center+' км'],
+  ['Аэропорт Малага', dist.airport+' км'],
+  ['Гольф', dist.golf+' км'],
+  ['Школа', dist.school+' км'],
+  ['Супермаркет', dist.supermarket+' км']
+].forEach(([label,val])=>{
+  const c = document.createElement('div'); c.className='card'; c.innerHTML = `<strong>${label}</strong><br>${val}`; dCards.appendChild(c);
+});
+
+/* ==== RENTAL KPI ==== */
+const adrMap = data.rental.short_term.adr_by_month;
+const occMap = data.rental.short_term.occ_by_month_pct;
+const adrArr = monthOrder.map(m => adrMap[m]);
+const occArr = monthOrder.map(m => occMap[m]);
+const avg = arr => arr.reduce((a,b)=>a+b,0)/arr.length;
+const adrAvg = avg(adrArr);
+const occAvgPct = avg(occArr)*100;
+
+const grossAnnual = monthOrder.reduce((sum, m, i)=> sum + adrMap[m]*(occMap[m])*(daysIn[i]), 0);
+const feesPct = (data.rental.short_term.fees.platform_pct || 0) + (data.rental.short_term.fees.management_pct || 0);
+const opex = data.rental.short_term.operating_costs_annual;
+const opexTotal = (opex.community_fees||0)+(opex.ibi||0)+(opex.basura||0)+(opex.insurance||0)+(opex.utilities||0)+(opex.maintenance||0)+(opex.other||0);
+const netManaged = grossAnnual * (1 - feesPct) - opexTotal;
+const netSelf = grossAnnual * (1 - (data.rental.short_term.fees.platform_pct||0)) - opexTotal;
+
+document.getElementById('kpi-adr').textContent = fmtMoney(adrAvg, data.property.pricing.currency);
+document.getElementById('kpi-occ').textContent = `${occAvgPct.toFixed(0)}%`;
+document.getElementById('kpi-net-mgmt').textContent = fmtMoney(netManaged, data.property.pricing.currency) + '/год';
+document.getElementById('kpi-net-self').textContent = fmtMoney(netSelf, data.property.pricing.currency) + '/год';
+const price = data.property.pricing.asking;
+document.getElementById('kpi-yld-mgmt').textContent = `≈${(netManaged/price*100).toFixed(1)}% к цене`;
+document.getElementById('kpi-yld-self').textContent = `≈${(netSelf/price*100).toFixed(1)}% к цене`;
+
+/* ==== FINANCE ==== */
+const p = data.finance.purchase;
+const taxes = p.taxes || {};
+const capex = p.capex || {};
+const itp = (taxes.itp_pct||0)*p.price;
+const ajd = (taxes.ajd_pct||0)*p.price;
+const vat = (taxes.vat_pct||0)*p.price;
+const capexTotal = (capex.renovation||0)+(capex.furnishing||0)+(capex.appliances||0)+(capex.other||0);
+const totalInvest = p.price + itp + ajd + vat + (taxes.notary||0) + (taxes.registry||0) + (taxes.legal||0) + capexTotal;
+
+const purchaseList = document.getElementById('purchase-list');
+const addLi = (label, value) => { const li = document.createElement('li'); li.innerHTML = `<span>${label}</span><span style="margin-left:auto">${value}</span>`; purchaseList.appendChild(li); };
+addLi('Цена', fmtMoney(p.price, data.property.pricing.currency));
+if (itp) addLi(`ITP (${(taxes.itp_pct*100).toFixed(0)}%)`, fmtMoney(itp));
+if (ajd) addLi(`AJD (${(taxes.ajd_pct*100).toFixed(0)}%)`, fmtMoney(ajd));
+if (vat) addLi(`VAT (${(taxes.vat_pct*100).toFixed(0)}%)`, fmtMoney(vat));
+addLi('Нотариус', fmtMoney(taxes.notary||0, data.property.pricing.currency));
+addLi('Регистрация', fmtMoney(taxes.registry||0, data.property.pricing.currency));
+addLi('Юр. сопровождение', fmtMoney(taxes.legal||0, data.property.pricing.currency));
+addLi('CapEx (ремонт+мебель+техника)', fmtMoney(capexTotal, data.property.pricing.currency));
+const liTotal = document.createElement('li');
+liTotal.style.fontWeight='600';
+liTotal.innerHTML = `<span>Итого инвестиция</span><span style="margin-left:auto">${fmtMoney(totalInvest, data.property.pricing.currency)}</span>`;
+purchaseList.appendChild(liTotal);
+
+// Mortgage
+const m = p.mortgage || {};
+const principal = p.price * (m.ltv_pct || 0);
+const r = (m.rate_pct || 0)/100/12;
+const n = (m.term_years || 0)*12;
+const monthly = r>0 ? (principal*r)/(1-Math.pow(1+r,-n)) : (principal/n||0);
+const mortgageList = document.getElementById('mortgage-list');
+const addLm = (label, value) => { const li = document.createElement('li'); li.innerHTML = `<span>${label}</span><span style="margin-left:auto">${value}</span>`; mortgageList.appendChild(li); };
+addLm('LTV', `${(m.ltv_pct*100).toFixed(0)}%`);
+addLm('Ставка', `${m.rate_pct}%`);
+addLm('Срок', `${m.term_years} лет`);
+addLm('Ежемес. платёж', fmtMoney(monthly, data.property.pricing.currency));
+
+// breakeven (ST)
+const monthlyOpex = opexTotal/12;
+const revPerOccDayNet = (adrAvg*(1-feesPct));
+const beOccPct = Math.min(100, Math.max(0, ( (monthlyOpex+monthly) / (revPerOccDayNet*30) )*100 ));
+addLm('Точка безубытка по загрузке', `~${beOccPct.toFixed(0)}%`);
+
+document.getElementById('opex-inline').textContent =
+  `Community ${fmtMoney(opex.community_fees||0)} • Utilities ${fmtMoney(opex.utilities||0)} • IBI ${fmtMoney(opex.ibi||0)} • Basura ${fmtMoney(opex.basura||0)} • Insurance ${fmtMoney(opex.insurance||0)} • Maintenance ${fmtMoney(opex.maintenance||0)}`;
+
+/* ==== COMPS ==== */
+const tbody = document.querySelector('#comps-table tbody');
+(data.comps||[]).forEach(c=>{
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td><a href="${c.url}" target="_blank" rel="noopener">${c.address}</a></td>
+    <td>${c.distance_km}</td>
+    <td>${fmtMoney(c.price, data.property.pricing.currency)}</td>
+    <td>${fmtNum(c.price_per_m2)} </td>
+    <td>${c.bedrooms}/${c.bathrooms}</td>
+    <td>${c.interior_m2}</td>
+    <td>${new Date(c.date).toLocaleDateString('ru-RU')}</td>`;
+  tbody.appendChild(tr);
+});
+
+/* ==== LEGAL / DISCLAIMER ==== */
+const legalList = document.getElementById('legal-list');
+(data.legal?.regulatory_notes||[]).forEach(t=>{ const li=document.createElement('li'); li.textContent=t; legalList.appendChild(li); });
+document.getElementById('disclaimer').textContent = (data.legal?.disclaimers||[]).join(' ');
+
+/* ==== FINAL CTA NUMBERS ==== */
+document.getElementById('final-price').textContent = fmtMoney(data.property.pricing.asking, data.property.pricing.currency);
+document.getElementById('final-income').textContent = `${fmtMoney(netManaged, data.property.pricing.currency)} – ${fmtMoney(netSelf, data.property.pricing.currency)}/год`;
+
+/* ==== CTAs ==== */
+document.getElementById('cta-offer-2').href = data.cta?.primary?.url || '#';
+document.getElementById('cta-contact-2').href = data.agent?.contacts?.website || '#';
+
+/* ==== AGENT CARD ==== */
+document.getElementById('agent-logo').src = data.agent.logo_url || '';
+document.getElementById('agent-name').innerHTML = `<strong>${data.agent.name}</strong> • ${data.agent.company} • Lic ${data.agent.license||''}`;
+document.getElementById('agent-contacts').innerHTML = `${data.agent.contacts.phone} • <a href="${data.agent.contacts.website}" target="_blank" rel="noopener">${data.agent.contacts.website}</a>`;
+document.getElementById('agent-phone').href = `tel:${data.agent.contacts.phone.replace(/\s+/g,'')}`;
+document.getElementById('agent-email').href = `mailto:${data.agent.contacts.email}`;
+document.getElementById('agent-whatsapp').href = data.agent.contacts.whatsapp || '#';
+
+/* ==== LISTING LINK ==== */
+document.getElementById('listing-url').href = data.property.url;
+document.getElementById('listing-url').textContent = data.property.url;
+
+/* ==== HERO SUBTITLE (area, city) как в narrative ==== */
+const subtitle = coverSubtitle || `${data.location.address.area}, ${data.location.address.city}`;
+const heroSubtitleEl = document.createElement('p');
+heroSubtitleEl.className='hero__subtitle';
+heroSubtitleEl.textContent = subtitle;
+// вставим под заголовок
+document.getElementById('hero-title').insertAdjacentElement('afterend', heroSubtitleEl);
+</script>
+</body>
+</html>
