@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lead Landing • Jonathan Hall</title>
+<meta name="color-scheme" content="light only">
+<style>
+:root{--ink:#0b1220;--muted:#5b6475;--line:#e8ebf0;--bg:#ffffff;--teal:#0e4b51;--teal-2:#116067;--cyan:#6fe3ff;--chip:#f5f6fa;--radius:16px;--w:1240px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:var(--w);margin:0 auto;padding:24px 16px}
+h1,h2,h3{margin:0 0 12px 0;font-weight:600;letter-spacing:-.01em}h1{font-size:40px}h2{font-size:32px}h3{font-size:20px}
+.muted{color:var(--muted)}.row{display:flex;gap:32px;align-items:flex-start}.col{flex:1}.lcol{width:480px;max-width:100%}.sp{height:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border:1px solid #000;border-radius:12px;background:#fff;color:#000;text-decoration:none}
+.btn--solid{background:#000;color:#fff}.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:var(--chip);font-size:14px}
+.kv{border-top:1px solid #000}.kv .item{display:flex;gap:24px;padding:14px 0;border-bottom:1px solid #000}.kv .k{width:506px;max-width:100%;font-size:20px}.kv .v{font-size:20px}
+.card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:20px}
+.teal{background:var(--teal);color:#fff}.teal .muted{color:rgba(255,255,255,.6)}.teal-lite{background:var(--teal-2)}
+.grid{display:grid;gap:18px}.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:20px;height:320px;display:flex;flex-direction:column;justify-content:space-between;border-radius:14px}
+.stat .big{font-size:44px;line-height:1.1}.table .hdr,.table .row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;gap:16px;align-items:center}
+.table .row{padding:12px 0;border-top:1px solid rgba(255,255,255,.35)}.right{text-align:right}
+.chat .msg{display:flex;margin:16px 0}.chat .msg .sender{flex:0 0 auto;font-weight:700;margin-right:14px;min-width:64px}
+.chat .msg.ai{justify-content:flex-start}.chat .msg.user{justify-content:flex-end}
+.chat .msg.user .sender{order:2;margin:0 0 0 14px;text-align:right}
+.bubble{max-width:720px;padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.msg.user .bubble{background:#f7fbff;border-color:#dfe7ff}
+@media (max-width:1024px){.row{flex-direction:column}.lcol{width:100%}.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}.table .hdr,.table .row{grid-template-columns:2fr 1fr 0 0 0 1fr}}
+@media (max-width:640px){h1{font-size:32px}h2{font-size:26px}.grid-4{grid-template-columns:1fr}.kv .k,.kv .v{font-size:18px}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="row" style="align-items:center;justify-content:space-between;gap:16px">
+    <img src="https://api.builder.io/api/v1/image/assets/TEMP/836a9e55ea89a83ed12b52e002c30b4699e266b8?width=341" alt="Riviera" style="height:48px">
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href="#">Download Brochure</a>
+      <a class="btn btn--solid" href="mailto:Jonathan@hallassetmgmt.com">Contact Lead</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <div class="row">
+      <div class="lcol">
+        <h2 style="font-weight:400">Lead</h2>
+        <div class="muted" style="font-size:12px">Created 09/08/2025</div>
+      </div>
+      <div class="col">
+        <h1 style="font-weight:400">Jonathan Hall</h1>
+        <div class="chips" style="margin-top:12px">
+          <span class="chip">EN</span>
+          <span class="chip">Source: facebook</span>
+          <span class="chip">Class A</span>
+          <span class="chip">qualified</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:60px">
+      <div class="lcol">
+        <h3>Budget</h3>
+        <div style="font-size:56px;line-height:1.1;font-weight:400">€350,000</div>
+      </div>
+      <div class="col">
+        <p style="font-size:22px;line-height:1.55;margin:0">Jonathan Hall is interested in purchasing a second home in Marbella, Costa Del Sol, with a budget up to €350,000. He is seeking a minimum 2-bedroom apartment, ideally with a pool and close to the sea and restaurants. He plans to use the property several months a year and utilize it for short-term rentals. Jonathan is at an early stage of his search, familiar with Marbella, and is open to exploring locations like Murcia and Valencia. He will require a mortgage for the purchase. The lead originated from a Facebook campaign, and a call attempt was recently answered.</p>
+      </div>
+    </div>
+
+    <div class="sp"></div>
+
+    <div class="kv">
+      <div class="item"><div class="k">Type</div><div class="v">Apartment</div></div>
+      <div class="item"><div class="k">Timeline</div><div class="v">Viewing trip planned October 2025</div></div>
+      <div class="item"><div class="k">Size</div><div class="v">Not specified</div></div>
+      <div class="item"><div class="k">Beds</div><div class="v">2+ bedrooms</div></div>
+      <div class="item"><div class="k">Financing</div><div class="v">Mortgage</div></div>
+      <div class="item"><div class="k">Locations</div><div class="v">Marbella, Costa Del Sol (open to Murcia &amp; Valencia)</div></div>
+      <div class="item"><div class="k">Use</div><div class="v">Second home + short-term rental</div></div>
+      <div class="item"><div class="k">Rental</div><div class="v">Short-term allowed</div></div>
+    </div>
+  </section>
+
+  <div class="sp"></div>
+
+  <section class="card">
+    <div class="row">
+      <div class="lcol">
+        <div style="font-size:18px;margin-bottom:16px">12/08/2025</div>
+        <div class="chips">
+          <span class="chip">Pool</span>
+          <span class="chip">Close to sea</span>
+          <span class="chip">Near restaurants</span><span class="chip">2+ bedrooms</span><span class="chip">Holiday rental use</span>
+        </div>
+      </div>
+      <div class="col">
+        <h2 style="font-weight:400;margin-bottom:10px">Conversation</h2>
+        <div class="chat">
+          <div class="msg ai"><div class="sender">AI</div><div class="bubble">Hi, Jonathan. It's Isabella from Riviera. I am calling about your property inquiry from Facebook.</div></div><div class="msg user"><div class="sender">User</div><div class="bubble">Sorry. Say again?</div></div><div class="msg ai"><div class="sender">AI</div><div class="bubble">Of course. Hi, Jonathan. This is Isabella from Raveiro. Thank you for your interest in property in Costa Del Sol. May I ask which specific area are you most interest example, Marbella, Estepona, Calahonda, etcetera.</div></div><div class="msg user"><div class="sender">User</div><div class="bubble">Yeah. Sorry. It's early stage of me, so I'm just returning back from work. You've hit me up with something. So I'm looking up either either timeshare in Marbella with Marriott. And I'm looking probably at a a a a a smaller base. I I know Marbella well. I like to just deploy the I'm looking at Mercia, Valencia. It's just an early date, so we try to get an idea of what's around the location through.</div></div><div class="msg ai"><div class="sender">AI</div><div class="bubble">Thank you, Jonathan. I've made a note that you're considering Marbella and possibly exploring other areas like Mercia or Valencia to help narrow things down. Could you let me know what type of property you're interested in? For example, are you looking for a villa, a apartment, or townhouse?</div></div><div class="msg user"><div class="sender">User</div><div class="bubble">Probably 2 bedroom apartments, a minimum</div></div><div class="msg ai"><div class="sender">AI</div><div class="bubble">Great. I've noted a minimum of 2 bedrooms in an apartment. May I ask, what is the main purpose of this purchase? Is it for a main residence a second home, short term rental, long term investment, or something else?</div></div><div class="msg user"><div class="sender">User</div><div class="bubble">Probably also, it said it's a a second home for me and family during several months of the year, and then a a rental asset property for the remainder.</div></div><div class="msg ai"><div class="sender">AI</div><div class="bubble">Thank you, Jonathan. I've made a note of that. Are there any specific features you'd like in the apartment? For example, a pool, terrace, parking, garden, or elevator?</div></div><div class="msg user"><div class="sender">User</div><div class="bubble">Probably a pull</div></div><div class="msg ai"><div class="sender">AI</div><div class="bubble">Understood. I've noted that a pool is important. Is there anything specific you'd like in the location, such as sea views, being close to the beach, near restaurants, golf courses, or a gym?</div></div><div class="msg user"><div class="sender">User</div><div class="bubble">Probably near restaurants and close to beach but not essential.</div></div><div class="msg ai"><div class="sender">AI</div><div class="bubble">Thank you. I've made a note of that. Could you please share your approximate budget for this purchase?</div></div><div class="msg user"><div class="sender">User</div><div class="bubble">About 2 50 k? 3 50.</div></div><div class="msg ai"><div class="sender">AI</div><div class="bubble">Thank you, Jonathan. I've noted a budget between 2 5 0 0 0 and 3 5 0 0 0 0. Will you be purchasing with cash, or will you require a mortgage?</div></div><div class="msg user"><div class="sender">User</div><div class="bubble">I'm mortgage.</div></div><div class="msg ai"><div class="sender">AI</div><div class="bubble">Great. Thank you for confirming you'll need a mortgage that that covers everything for now. I'll follow-up with some options that fit your preferences. If you have any other questions, in the meantime, please let me know.</div></div><div class="msg user"><div class="sender">User</div><div class="bubble">Okay. Thank you.</div></div><div class="msg ai"><div class="sender">AI</div><div class="bubble">Thank you, Jonathan. I appreciate your time. I'll be in touch soon with suitable options. Have a great day.</div></div><div class="msg user"><div class="sender">User</div><div class="bubble">Thank you. Bye.</div></div><div class="msg ai"><div class="sender">AI</div><div class="bubble">You're very welcome, Jonathan. Take care, and bye for now.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sp"></div>
+
+  <section class="teal" style="border-radius:16px;padding:32px 20px">
+    <div class="row">
+      <div class="lcol"><span class="muted">Last App Session</span><span style="font-size:22px"> —</span></div>
+      <div class="col"><h2 style="font-weight:400;margin-bottom:6px">App Data</h2><p style="font-size:20px;margin:0">Summary of user app activity</p></div>
+    </div>
+
+    <div class="grid grid-4" style="padding:20px 0">
+      <div class="stat"><div>Search time</div><div><div class="big">9h 40m</div><div style="height:1px;background:rgba(0,0,0,.25);margin:10px 0"></div><div class="muted">The Profit on Cost indicator reflects a strong and efficient return on investment.</div></div></div>
+      <div class="stat"><div>Property views</div><div><div class="big">58</div><div style="height:1px;background:rgba(0,0,0,.25);margin:10px 0"></div><div class="muted">We have meticulously developed the financial model, ensuring stable cash flow.</div></div></div>
+      <div class="stat"><div>Sessions</div><div><div class="big">14</div><div style="height:1px;background:rgba(0,0,0,.25);margin:10px 0"></div><div class="muted">We have meticulously developed the financial model, ensuring stable cash flow.</div></div></div>
+      <div class="stat"><div>Favorites</div><div><div class="big">11</div><div style="height:1px;background:rgba(0,0,0,.25);margin:10px 0"></div><div class="muted">We have meticulously developed the financial model, ensuring stable cash flow.</div></div></div>
+    </div>
+
+    <div class="table">
+      <h3 style="color:#fff;margin:0 0 18px">Favorites:</h3>
+      <div class="hdr" style="color:#fff"><div>Favorite</div><div>Price</div><div class="right">Beds</div><div>Type</div><div class="right">Annual Income</div><div class="right">Location</div></div>
+      <div class="row" style="color:#fff"><div><u>Title</u></div><div>€900,000</div><div class="right">4</div><div>Villa</div><div class="right">6.7%</div><div class="right">Marbella</div></div><div class="row" style="color:#fff"><div><u>Title</u></div><div>€900,000</div><div class="right">4</div><div>Villa</div><div class="right">6.7%</div><div class="right">Marbella</div></div><div class="row" style="color:#fff"><div><u>Title</u></div><div>€900,000</div><div class="right">4</div><div>Villa</div><div class="right">6.7%</div><div class="right">Marbella</div></div>
+      <div class="right" style="margin-top:10px"><a href="#" style="color:var(--cyan);font-size:20px">Show All</a></div>
+    </div>
+
+    <div class="sp"></div>
+
+    <div class="table">
+      <h3 style="color:#fff;margin:0 0 18px">Recently viewed:</h3>
+      <div class="hdr" style="color:#fff"><div>Favorite</div><div>Price</div><div class="right">Beds</div><div>Type</div><div class="right">Annual Income</div><div class="right">Location</div></div>
+      <div class="row" style="color:#fff"><div><u>Title</u></div><div>€900,000</div><div class="right">4</div><div>Villa</div><div class="right">6.7%</div><div class="right">Marbella</div></div><div class="row" style="color:#fff"><div><u>Title</u></div><div>€900,000</div><div class="right">4</div><div>Villa</div><div class="right">6.7%</div><div class="right">Marbella</div></div><div class="row" style="color:#fff"><div><u>Title</u></div><div>€900,000</div><div class="right">4</div><div>Villa</div><div class="right">6.7%</div><div class="right">Marbella</div></div>
+      <div class="right" style="margin-top:10px"><a href="#" style="color:var(--cyan);font-size:20px">Show All</a></div>
+    </div>
+  </section>
+
+  <div class="sp"></div>
+
+  <section class="card">
+    <div class="row">
+      <div class="lcol">
+        <div class="muted" style="margin-bottom:16px;font-size:18px">Interests</div>
+        <div class="chips"><span class="chip">Real estate financing</span><span class="chip">Fintech innovation</span><span class="chip">Luxury travel</span></div>
+      </div>
+      <div class="col">
+        <h2 style="font-weight:400;margin-bottom:10px">LinkedIn Info</h2>
+        <div class="kv" style="border-top:none">
+          <div class="item"><div class="k">Position</div><div class="v">Managing Director at Iberia Bank</div></div>
+          <div class="item"><div class="k">Location</div><div class="v">Madrid, Spain</div></div>
+          <div class="item"><div class="k">Industry</div><div class="v">Banking &amp; Financial Services</div></div>
+          <div class="item"><div class="k">Experience</div><div class="v">Over 15 years in corporate banking and private wealth management. Previously Regional Director at Santander Group.</div></div>
+          <div class="item"><div class="k">LinkedIn</div><div class="v"><a href="#" target="_blank">Link</a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sp"></div>
+
+  <section class="card">
+    <div class="row">
+      <div class="lcol">
+        <div style="font-size:18px;margin-bottom:12px">Lead Prefer</div>
+        <div class="chips"><span class="chip">Whatsapp</span><span class="chip">Email</span></div>
+      </div>
+      <div class="col">
+        <h2 style="font-weight:400;margin-bottom:8px">Contact Info</h2>
+        <div class="kv" style="border-top:none">
+          <div class="item"><div class="k" style="width:128px">Phone</div><div class="v"><a href="tel:+447801101427">+447801101427</a></div></div>
+          <div class="item"><div class="k" style="width:128px">Email</div><div class="v"><a href="mailto:Jonathan@hallassetmgmt.com">Jonathan@hallassetmgmt.com</a></div></div>
+          <div class="item"><div class="k" style="width:128px">Call record</div><div class="v"><a href="https://storage.vapi.ai/a5a3f03e-fcd3-4157-abbc-68945238a254-1755018423602-f17ca488-a3eb-4ce8-a6f3-02b4185a63d2-mono.wav" target="_blank">Listen</a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</body></html>
