@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Detached house for sale in Avenida Huerta Belón, 14-20 — Huerta Belón</title>
+  <title>{{ $json.title }} — {{ $json.location.address.area }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -133,10 +133,10 @@
   <!-- Header -->
   <header>
     <div class="container header__bar">
-      <img class="logo" src="https://www.idealista.com/favicon.ico" alt="Idealista Listing" />
+      <img class="logo" src="{{ $json.agent.logo_url }}" alt="{{ $json.agent.company }}" />
       <div style="display:flex;gap:12px;flex-wrap:wrap">
         <a class="btn" href="#" onclick="downloadBrochure()">Download Brochure</a>
-        <a class="btn btn--primary" href="https://www.idealista.com/en/inmueble/106154934/" target="_blank" rel="noopener">Contact Sales Manager</a>
+        <a class="btn btn--primary" href="{{ $json.agent.contacts.website }}" target="_blank" rel="noopener">Contact Sales Manager</a>
       </div>
     </div>
   </header>
@@ -145,14 +145,14 @@
     <!-- Print Cover Page (only visible in print) -->
     <div class="cover-page">
       <div class="cover-header">
-        <img class="logo" src="https://www.idealista.com/favicon.ico" alt="Idealista Listing" />
+        <img class="logo" src="{{ $json.agent.logo_url }}" alt="{{ $json.agent.company }}" />
         <div class="cover-header-info">
           <div class="cover-property-for-sale">Property for sale</div>
-          <div class="cover-created">Created September 12, 2025</div>
+          <div class="cover-created">Created {{ (new Date()).toLocaleDateString('en-US',{day:'2-digit',month:'long',year:'numeric'}) }}</div>
         </div>
       </div>
-      <h1 class="h1 cover-title">Detached house for sale in Avenida Huerta Belón, 14-20</h1>
-      <img class="hero-image cover-image" src="https://img4.idealista.com/blur/WEB_DETAIL/0/id.pro.es.image.master/c7/cc/de/1281745930.jpg" alt="Detached house for sale in Avenida Huerta Belón, 14-20" />
+      <h1 class="h1 cover-title">{{ $json.title }}</h1>
+      <img class="hero-image cover-image" src="{{ $json.media.cover.url }}" alt="{{ $json.media.cover.caption || $json.title }}" />
     </div>
 
     <!-- Main content (starts from 2nd page in print) -->
@@ -162,21 +162,21 @@
           <div>
             <h2 class="hero__title">Property for sale</h2>
             <p class="hero__subtitle">
-              Last update: September 12, 2025
+              Last update: {{ (new Date()).toLocaleDateString('en-US',{day:'2-digit',month:'long',year:'numeric'}) }}
             </p>
           </div>
           <div>
-            <h1 class="h1">Detached house for sale in Avenida Huerta Belón, 14-20</h1>
+            <h1 class="h1">{{ $json.title }}</h1>
           </div>
         </div>
 
-        <img class="hero-image" src="https://img4.idealista.com/blur/WEB_DETAIL/0/id.pro.es.image.master/c7/cc/de/1281745930.jpg" alt="Detached house for sale in Avenida Huerta Belón, 14-20" />
+        <img class="hero-image" src="{{ $json.media.cover.url }}" alt="{{ $json.media.cover.caption || $json.title }}" />
 
         <div class="section" style="padding:40px 0 0">
           <div class="grid grid-2">
             <div><h2 class="h2">Overview</h2></div>
             <div>
-              <p class="lead">Located in a highly sought-after area, it perfectly combines convenience and tranquillity. Just a 10-minute walk from Marbella’s Old Town and the beach, the villa is also within walking distance of hundreds of restaurants, shops, and leisure facilities, offering comfortable and accessible living while maintaining complete privacy.The interiors have been designed with meticulous attention to detail, blending contemporary style with the highest quality finishes. The open-plan living and dining area is bathed in natural light thanks to the expansive sliding glass doors that seamlessly connect the indoor and outdoor spaces. Neutral tones and modern furnishings create a warm and inviting atmosphere, making it an ideal space for both relaxation and entertaining. The large outdoor terrace, accessible from the living area, provides the perfect setting for alfresco dining, surrounded by lush greenery.The villa boasts a heated pool, allowing year-round use, along with a jacuzzi for ultimate relaxation. The landscaped gardens surrounding the pool area add a sense of serenity and privacy, creating a peaceful oasis within this luxurious property. A chic outdoor seating area is ideal for sunbathing or hosting guests, making the most of the Mediterranean climate.Each of the five bedrooms has been designed to maximise comfort and style. The master bedroom is particularly impressive, featuring a private balcony, a luxurious en-suite bathroom with underfloor heating, and fitted wardrobes. All bedrooms are equipped with air conditioning, offer generous space, ample storage, and a modern, elegant aesthetic, creating the perfect retreat for rest and relaxation.The villa also includes outstanding entertainment and wellness features, such as a private cinema room and a fully equipped gym. The cinema room is perfect for enjoying films or streaming your favourite shows in a cosy, high-tech environment, while the gym allows you to stay fit without leaving the comfort of your home. The villa also offers a basement laundry room and access to an outdoor patio on this level, maximising natural light throughout the space. Additionally, the basement includes built-in storage areas for added convenience.Extra features include a modern security system, ensuring residents' peace of mind, and secure parking within the property. The villa also benefits from solar panels, making it an energy-efficient choice.One of the standout features of this villa is its prime location. Set in the heart of Marbella, it offers easy access to the vibrant local scene while maintaining a quiet, private setting. The villa is just a 10-minute drive from Puerto Banús, known for its luxury yachts, designer boutiques, and lively nightlife. La Cañada, Marbella’s premier shopping mall, is only a 5-minute drive away, and nearby you’ll find two international nurseries and a tennis and padel club just 5 minutes away on foot.This villa is a rare opportunity to experience modern luxury in one of Marbella’s most desirable locations. Whether you’re seeking a permanent residence or a luxurious holiday retreat, this property combines elegant design, superior quality, and a prime location to offer an unparalleled lifestyle in the heart of the Costa del Sol.</p>
+              <p class="lead">{{ $json.description }}</p>
             </div>
           </div>
 
@@ -186,39 +186,39 @@
 <div class="facts">
   <div class="facts__row">
     <div class="facts__label">Price:</div>
-    <div class="facts__value">€2,349,000</div>
+    <div class="facts__value">€{{ new Intl.NumberFormat('en-US').format($json.pricing.asking) }}</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">Bedrooms:</div>
-    <div class="facts__value">5</div>
+    <div class="facts__value">{{ $json.rooms.bedrooms }}</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">Bathrooms:</div>
-    <div class="facts__value">5</div>
+    <div class="facts__value">{{ $json.rooms.bathrooms }}</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">Interior:</div>
-    <div class="facts__value">339 м²</div>
+    <div class="facts__value">{{ $json.areas.interior_m2 }} м²</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">Terrace:</div>
-    <div class="facts__value">0 м²</div>
+    <div class="facts__value">{{ $json.areas.terrace_m2 }} м²</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">Orientation:</div>
-    <div class="facts__value">UNKNOWN</div>
+    <div class="facts__value">{{ ($json.features.orientation || '').toString().toUpperCase() }}</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">Floor:</div>
-    <div class="facts__value">N/A</div>
+    <div class="facts__value">{{ ($json.features.floor || '').toString().toUpperCase() }}</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">Energy class:</div>
-    <div class="facts__value">A (22 kWh/m² year)</div>
+    <div class="facts__value">{{ $json.features.energy_rating }}</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">Reference:</div>
-    <div class="facts__value">106154934</div>
+    <div class="facts__value">{{ $json.ref_code }}</div>
             </div>
           </div>
         </div>
@@ -229,21 +229,21 @@
     <section class="section--lg" style="background:#fff">
       <div class="container">
         <div class="grid grid-4">
-          <img class="card" src="https://img4.idealista.com/blur/WEB_DETAIL/0/id.pro.es.image.master/c7/cc/de/1281745930.jpg" alt="Front exterior and pool">
-          <img class="card" src="https://my.matterport.com/show/?m=mR2Y363sLHY&lang=en&play=1" alt="Virtual tour">
-          <img class="card" src="https://img4.idealista.com/blur/WEB_DETAIL/0/id.pro.es.image.master/c7/cc/de/1281745930.jpg" alt="Фото 3">
-          <img class="card" src="https://img4.idealista.com/blur/WEB_DETAIL/0/id.pro.es.image.master/c7/cc/de/1281745930.jpg" alt="Фото 4">
+          <img class="card" src="{{ $json.media.gallery?.[0]?.url || $json.media.cover.url }}" alt="{{ $json.media.gallery?.[0]?.caption || 'Фото 1' }}">
+          <img class="card" src="{{ $json.media.gallery?.[1]?.url || $json.media.cover.url }}" alt="{{ $json.media.gallery?.[1]?.caption || 'Фото 2' }}">
+          <img class="card" src="{{ $json.media.gallery?.[2]?.url || $json.media.cover.url }}" alt="{{ $json.media.gallery?.[2]?.caption || 'Фото 3' }}">
+          <img class="card" src="{{ $json.media.gallery?.[3]?.url || $json.media.cover.url }}" alt="{{ $json.media.gallery?.[3]?.caption || 'Фото 4' }}">
         </div>
 
         <div class="section" style="padding:40px 0 0">
           <div class="grid grid-2">
             <div><h2 class="h2">Description</h2></div>
             <div>
-              <p style="font-size:18px;line-height:1.7;color:var(--slate)">Located in a highly sought-after area, it perfectly combines convenience and tranquillity. Just a 10-minute walk from Marbella’s Old Town and the beach, the villa is also within walking distance of hundreds of restaurants, shops, and leisure facilities, offering comfortable and accessible living while maintaining complete privacy.The interiors have been designed with meticulous attention to detail, blending contemporary style with the highest quality finishes. The open-plan living and dining area is bathed in natural light thanks to the expansive sliding glass doors that seamlessly connect the indoor and outdoor spaces. Neutral tones and modern furnishings create a warm and inviting atmosphere, making it an ideal space for both relaxation and entertaining. The large outdoor terrace, accessible from the living area, provides the perfect setting for alfresco dining, surrounded by lush greenery.The villa boasts a heated pool, allowing year-round use, along with a jacuzzi for ultimate relaxation. The landscaped gardens surrounding the pool area add a sense of serenity and privacy, creating a peaceful oasis within this luxurious property. A chic outdoor seating area is ideal for sunbathing or hosting guests, making the most of the Mediterranean climate.Each of the five bedrooms has been designed to maximise comfort and style. The master bedroom is particularly impressive, featuring a private balcony, a luxurious en-suite bathroom with underfloor heating, and fitted wardrobes. All bedrooms are equipped with air conditioning, offer generous space, ample storage, and a modern, elegant aesthetic, creating the perfect retreat for rest and relaxation.The villa also includes outstanding entertainment and wellness features, such as a private cinema room and a fully equipped gym. The cinema room is perfect for enjoying films or streaming your favourite shows in a cosy, high-tech environment, while the gym allows you to stay fit without leaving the comfort of your home. The villa also offers a basement laundry room and access to an outdoor patio on this level, maximising natural light throughout the space. Additionally, the basement includes built-in storage areas for added convenience.Extra features include a modern security system, ensuring residents' peace of mind, and secure parking within the property. The villa also benefits from solar panels, making it an energy-efficient choice.One of the standout features of this villa is its prime location. Set in the heart of Marbella, it offers easy access to the vibrant local scene while maintaining a quiet, private setting. The villa is just a 10-minute drive from Puerto Banús, known for its luxury yachts, designer boutiques, and lively nightlife. La Cañada, Marbella’s premier shopping mall, is only a 5-minute drive away, and nearby you’ll find two international nurseries and a tennis and padel club just 5 minutes away on foot.This villa is a rare opportunity to experience modern luxury in one of Marbella’s most desirable locations. Whether you’re seeking a permanent residence or a luxurious holiday retreat, this property combines elegant design, superior quality, and a prime location to offer an unparalleled lifestyle in the heart of the Costa del Sol.</p>
+              <p style="font-size:18px;line-height:1.7;color:var(--slate)">{{ $json.description }}</p>
               <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px">
-                <span class="badge">Prime walkable location: Old Town and beach in 10 minutes</span>
-                <span class="badge">Heated pool, jacuzzi, landscaped gardens and large terraces</span>
-                <span class="badge">Cinema room, gym, solar panels and advanced security</span>
+                <span class="badge">{{ $json.narrative.highlights_bullets[0] }}</span>
+                <span class="badge">{{ $json.narrative.highlights_bullets[1] }}</span>
+                <span class="badge">{{ $json.narrative.highlights_bullets[2] }}</span>
               </div>
             </div>
           </div>
@@ -260,7 +260,7 @@
           <div>
             <h3 class="h3">Prime Location</h3>
             <p class="lead" style="max-width:1000px">
-              Район Huerta Belón (Marbella). Поблизости: Marbella Old Town, Puerto Banús Marina, La Cañada Shopping Mall, Nearest Beach, Local Tennis & Padel Club
+              {{ `Район ${$json.location.address.area} (${ $json.location.address.city }). Поблизости: ${$json.location.pois.map(p=>p.name).join(', ')}` }}
             </p>
           </div>
         </div>
@@ -271,34 +271,34 @@
             <div class="map__overlay" onclick="this.remove()"></div>
             <iframe
               loading="lazy"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-4.8925%2C36.5001%2C-4.8725000000000005%2C36.5201&layer=mapnik&marker=36.5101%2C-4.8825">
+              src="{{ (()=>{ const lat=$json.location.coordinates.lat, lng=$json.location.coordinates.lng, pad=0.01; const bbox=[lng-pad, lat-pad, lng+pad, lat+pad].join('%2C'); return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lng}`; })() }}">
             </iframe>
           </div>
 
 <div class="facts">
   <div class="facts__row">
     <div class="facts__label">Beach:</div>
-    <div class="facts__value">0.8 км</div>
+    <div class="facts__value">{{ $json.location.distances_km.beach }} км</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">Marbella Center:</div>
-    <div class="facts__value">0.8 км</div>
+    <div class="facts__value">{{ $json.location.distances_km.city_center }} км</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">Málaga Airport:</div>
-    <div class="facts__value">52 км</div>
+    <div class="facts__value">{{ $json.location.distances_km.airport }} км</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">Golf:</div>
-    <div class="facts__value">3 км</div>
+    <div class="facts__value">{{ $json.location.distances_km.golf }} км</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">School:</div>
-    <div class="facts__value">0.5 км</div>
+    <div class="facts__value">{{ $json.location.distances_km.school }} км</div>
   </div>
   <div class="facts__row">
     <div class="facts__label">Supermarket:</div>
-    <div class="facts__value">0.5 км</div>
+    <div class="facts__value">{{ $json.location.distances_km.supermarket }} км</div>
             </div>
           </div>
         </div>
@@ -317,23 +317,23 @@
       <div class="grid grid-4">
         <div class="card card--dark kpi">
           <div class="kpi__title">Avg ADR (year)</div>
-          <div class="kpi__value">€935</div>
+          <div class="kpi__value">€{{ new Intl.NumberFormat('en-US').format($json.metrics.avg_adr) }}</div>
           <div class="muted">benchmark for 1-bed beachfront</div>
         </div>
         <div class="card card--dark kpi">
           <div class="kpi__title">Average occupancy</div>
-          <div class="kpi__value">64%</div>
+          <div class="kpi__value">{{ $json.metrics.avg_occ_pct }}%</div>
           <div class="muted">depends on season</div>
         </div>
         <div class="card card--dark kpi">
           <div class="kpi__title">Net (with management)</div>
-          <div class="kpi__value">€158,742/year</div>
-          <div class="muted">≈6.8% of price</div>
+          <div class="kpi__value">€{{ new Intl.NumberFormat('en-US').format($json.metrics.net_with_management) }}/year</div>
+          <div class="muted">≈{{ $json.metrics.yield_with_management }}% of price</div>
         </div>
         <div class="card card--dark kpi">
           <div class="kpi__title">Net (self-managed)</div>
-          <div class="kpi__value">€207,234/year</div>
-          <div class="muted">≈8.8% of price</div>
+          <div class="kpi__value">€{{ new Intl.NumberFormat('en-US').format($json.metrics.net_self) }}/year</div>
+          <div class="muted">≈{{ $json.metrics.yield_self }}% of price</div>
         </div>
       </div>
     </div>
@@ -352,16 +352,16 @@
           <div class="dropdown-content" id="purchase-table" style="display:none">
             <table class="table-finance">
               <tbody>
-                <tr><td>Price</td><td style="text-align:right">€2,349,000</td></tr>
-                <tr><td>ITP (700%)</td><td style="text-align:right">€16,443,000</td></tr>
-                <tr><td>AJD (0%)</td><td style="text-align:right">€0</td></tr>
-                <tr><td>Notary</td><td style="text-align:right">€2,000</td></tr>
-                <tr><td>Registry</td><td style="text-align:right">€1,200</td></tr>
-                <tr><td>Legal</td><td style="text-align:right">€4,000</td></tr>
-                <tr><td>CapEx (renovation+furniture+appliances)</td><td style="text-align:right">€125,000</td></tr>
+                <tr><td>Price</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.finance.purchase.price) }}</td></tr>
+                <tr><td>ITP ({{ $json.finance.purchase.taxes.itp_pct*100 }}%)</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.finance.purchase.taxes.itp_pct * $json.finance.purchase.price) }}</td></tr>
+                <tr><td>AJD ({{ $json.finance.purchase.taxes.ajd_pct*100 }}%)</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.finance.purchase.taxes.ajd_pct * $json.finance.purchase.price) }}</td></tr>
+                <tr><td>Notary</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.finance.purchase.taxes.notary) }}</td></tr>
+                <tr><td>Registry</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.finance.purchase.taxes.registry) }}</td></tr>
+                <tr><td>Legal</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.finance.purchase.taxes.legal) }}</td></tr>
+                <tr><td>CapEx (renovation+furniture+appliances)</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.finance.purchase.capex.renovation + $json.finance.purchase.capex.furnishing + $json.finance.purchase.capex.appliances + $json.finance.purchase.capex.other) }}</td></tr>
                 <tr style="font-weight:600">
                   <td>Total investment</td>
-                  <td style="text-align:right">€0</td>
+                  <td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.metrics.total_investment || 0) }}</td>
                 </tr>
               </tbody>
             </table>
@@ -371,12 +371,12 @@
                 <div class="dropdown-content" id="annual-table" style="display:none">
                 <table class="table-finance">
                     <tbody>
-                    <tr><td>Community</td><td style="text-align:right">€0</td></tr>
-                    <tr><td>Utilities</td><td style="text-align:right">€9,600</td></tr>
-                    <tr><td>IBI</td><td style="text-align:right">€3,800</td></tr>
-                    <tr><td>Basura</td><td style="text-align:right">€200</td></tr>
-                    <tr><td>Insurance</td><td style="text-align:right">€1,500</td></tr>
-                    <tr><td>Maintenance</td><td style="text-align:right">€6,000</td></tr>
+                    <tr><td>Community</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.rental.short_term.operating_costs_annual.community_fees) }}</td></tr>
+                    <tr><td>Utilities</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.rental.short_term.operating_costs_annual.utilities) }}</td></tr>
+                    <tr><td>IBI</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.rental.short_term.operating_costs_annual.ibi) }}</td></tr>
+                    <tr><td>Basura</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.rental.short_term.operating_costs_annual.basura) }}</td></tr>
+                    <tr><td>Insurance</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.rental.short_term.operating_costs_annual.insurance) }}</td></tr>
+                    <tr><td>Maintenance</td><td style="text-align:right">€{{ new Intl.NumberFormat('en-US').format($json.rental.short_term.operating_costs_annual.maintenance) }}</td></tr>
                     </tbody>
                 </table>
                 </div>
@@ -384,16 +384,38 @@
               <div class="dropdown-content" id="mortgage-table" style="display:none">
                 <table class="table-finance">
                   <tbody>
-                    <tr><td>LTV</td><td style="text-align:right">6000%</td></tr>
-                    <tr><td>Interest rate</td><td style="text-align:right">3.5% fixed.</td></tr>
-                    <tr><td>Term</td><td style="text-align:right">25 лет</td></tr>
+                    <tr><td>LTV</td><td style="text-align:right">{{ $json.finance.purchase.mortgage.ltv_pct*100 }}%</td></tr>
+                    <tr><td>Interest rate</td><td style="text-align:right">{{ $json.finance.purchase.mortgage.rate_pct }}% fixed.</td></tr>
+                    <tr><td>Term</td><td style="text-align:right">{{ $json.finance.purchase.mortgage.term_years }} лет</td></tr>
                     <tr>
                       <td>Monthly payment</td>
-                      <td style="text-align:right">€705,579</td>
+                      <td style="text-align:right">€{{
+                        (()=>{const P=$json.finance.purchase.price*$json.finance.purchase.mortgage.ltv_pct;
+                              const r=($json.finance.purchase.mortgage.rate_pct/100)/12;
+                              const n=$json.finance.purchase.mortgage.term_years*12;
+                              const m=(P*r)/(1-Math.pow(1+r,-n));
+                              return new Intl.NumberFormat('en-US').format(Math.round(m));
+                        })()
+                      }}</td>
                     </tr>
                     <tr>
                       <td>Break-even occupancy</td>
-                      <td style="text-align:right">-105%</td>
+                      <td style="text-align:right">{{
+                        (()=>{const m=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+                              const d=[31,28,31,30,31,30,31,31,30,31,30,31];
+                              const a=$json.rental.short_term.adr_by_month, o=$json.rental.short_term.occ_by_month_pct;
+                              const avgAdr=(a.jan+a.feb+a.mar+a.apr+a.may+a.jun+a.jul+a.aug+a.sep+a.oct+a.nov+a.dec)/12;
+                              const fees=$json.rental.short_term.fees.platform_pct+$json.rental.short_term.fees.management_pct;
+                              const op=$json.rental.short_term.operating_costs_annual;
+                              const opex=((op.community_fees||0)+(op.ibi||0)+(op.basura||0)+(op.insurance||0)+(op.utilities||0)+(op.maintenance||0)+(op.other||0))/12;
+                              const P=$json.finance.purchase.price*$json.finance.purchase.mortgage.ltv_pct;
+                              const r=($json.finance.purchase.mortgage.rate_pct/100)/12;
+                              const n=$json.finance.purchase.mortgage.term_years*12;
+                              const pay=(P*r)/(1-Math.pow(1+r,-n));
+                              const be=((opex+pay)/(avgAdr*(1-fees)*30))*100;
+                              return Math.round(be)+'%';
+                        })()
+                      }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -410,15 +432,15 @@
         <div class="cta">
           <div class="card card--dark" style="background:transparent;border-color:#2B2F33;padding:24px !important;">
             <div style="margin-bottom:6px;color:#CBD5E1">Asking price</div>
-            <div class="price-big">€2,349,000</div>
+            <div class="price-big">€{{ new Intl.NumberFormat('en-US').format($json.pricing.asking) }}</div>
             <div class="muted">Buyer fees: included? — to be confirmed</div>
           </div>
           <div class="card card--dark" style="background:transparent;border-color:#2B2F33;padding:24px !important;">
             <div style="margin-bottom:6px;color:var(--cyan)">Potential net income</div>
             <div class="price-big price-big--cyan">
-  €158,742
+  €{{ new Intl.NumberFormat('en-US').format($json.metrics.net_with_management) }}
   – 
-  €207,234/year
+  €{{ new Intl.NumberFormat('en-US').format($json.metrics.net_self) }}/year
 </div>
             <div class="muted">depending on management</div>
           </div>
@@ -434,15 +456,15 @@
           <!-- Left, narrow column -->
           <div class="agency-col">
             <h2 class="h2">Agency</h2>
-            <p style="margin:0 0 16px"><a href="https://www.idealista.com/en/inmueble/106154934/" target="_blank" rel="noopener">Website</a></p>
-            <img class="agency-logo" src="https://www.idealista.com/favicon.ico" alt="Idealista Listing" style="width:160px;height:160px;object-fit:contain;border:1px solid var(--gray-200)">
+            <p style="margin:0 0 16px"><a href="{{ $json.agent.contacts.website }}" target="_blank" rel="noopener">Website</a></p>
+            <img class="agency-logo" src="{{ $json.agent.logo_url }}" alt="{{ $json.agent.company }}" style="width:160px;height:160px;object-fit:contain;border:1px solid var(--gray-200)">
           </div>
 
           <!-- Right, wide column -->
           <div>
-            <h3 class="h3">Idealista Listing</h3>
-            <p class="lead" style="max-width:760px">Located in a highly sought-after area, it perfectly combines convenience and tranquillity. Just a 10-minute walk from Marbella’s Old Town and the beach, the villa is also within walking distance of hundreds of restaurants, shops, and leisure facilities, offering comfortable and accessible living while maintaining complete privacy.The interiors have been designed with meticulous attention to detail, blending contemporary style with the highest quality finishes. The open-plan living and dining area is bathed in natural light thanks to the expansive sliding glass doors that seamlessly connect the indoor and outdoor spaces. Neutral tones and modern furnishings create a warm and inviting atmosphere, making it an ideal space for both relaxation and entertaining. The large outdoor terrace, accessible from the living area, provides the perfect setting for alfresco dining, surrounded by lush greenery.The villa boasts a heated pool, allowing year-round use, along with a jacuzzi for ultimate relaxation. The landscaped gardens surrounding the pool area add a sense of serenity and privacy, creating a peaceful oasis within this luxurious property. A chic outdoor seating area is ideal for sunbathing or hosting guests, making the most of the Mediterranean climate.Each of the five bedrooms has been designed to maximise comfort and style. The master bedroom is particularly impressive, featuring a private balcony, a luxurious en-suite bathroom with underfloor heating, and fitted wardrobes. All bedrooms are equipped with air conditioning, offer generous space, ample storage, and a modern, elegant aesthetic, creating the perfect retreat for rest and relaxation.The villa also includes outstanding entertainment and wellness features, such as a private cinema room and a fully equipped gym. The cinema room is perfect for enjoying films or streaming your favourite shows in a cosy, high-tech environment, while the gym allows you to stay fit without leaving the comfort of your home. The villa also offers a basement laundry room and access to an outdoor patio on this level, maximising natural light throughout the space. Additionally, the basement includes built-in storage areas for added convenience.Extra features include a modern security system, ensuring residents' peace of mind, and secure parking within the property. The villa also benefits from solar panels, making it an energy-efficient choice.One of the standout features of this villa is its prime location. Set in the heart of Marbella, it offers easy access to the vibrant local scene while maintaining a quiet, private setting. The villa is just a 10-minute drive from Puerto Banús, known for its luxury yachts, designer boutiques, and lively nightlife. La Cañada, Marbella’s premier shopping mall, is only a 5-minute drive away, and nearby you’ll find two international nurseries and a tennis and padel club just 5 minutes away on foot.This villa is a rare opportunity to experience modern luxury in one of Marbella’s most desirable locations. Whether you’re seeking a permanent residence or a luxurious holiday retreat, this property combines elegant design, superior quality, and a prime location to offer an unparalleled lifestyle in the heart of the Costa del Sol.</p>
-            <a class="btn btn--primary" href="https://www.idealista.com/en/inmueble/106154934/" target="_blank" rel="noopener" style="margin-top:8px">Contact&nbsp;→</a>
+            <h3 class="h3">{{ $json.agent.company }}</h3>
+            <p class="lead" style="max-width:760px">{{ $json.description }}</p>
+            <a class="btn btn--primary" href="{{ $json.agent.contacts.website }}" target="_blank" rel="noopener" style="margin-top:8px">Contact&nbsp;→</a>
           </div>
         </div>
       </div>
@@ -635,18 +657,24 @@
       body {
         background: #fff !important;
         color: #000 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
       header, .btn, .dropdown-header {
         display: none !important;
       }
       /* Hide everything except .cover-page on first page */
       .cover-page {
-        display: block !important;
-        page-break-after: always;
-        padding: 32px 0 0 0;
-        background: #fff !important;
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
         box-sizing: border-box;
-        min-height: 100vh;
+        background: #fff !important;
+        page-break-after: always;
+        padding: 0 !important;
       }
       /* Hide all siblings of .cover-page on first page */
       main > :not(.cover-page) {
@@ -660,7 +688,6 @@
         display: block !important;
         page-break-before: always;
       }
-      /* All main content after cover-page: show as normal */
       main > .cover-page ~ * {
         display: block !important;
       }
@@ -675,15 +702,8 @@
         padding: 20px 0 !important;
       }
       @page {
-        margin: 20mm;
-        size: A4;
-      }
-      body {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-      }
-      @page {
         margin: 0;
+        size: A4;
       }
       html, body {
         margin: 0 !important;
@@ -693,30 +713,86 @@
       body::before, body::after {
         content: none !important;
       }
-      /* Cover image styles for print */
+      /* --- COVER PAGE LAYOUT --- */
+      .cover-page {
+        /* already set above */
+      }
+      .cover-header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        padding: 32px 48px 0 48px !important;
+        margin: 0 !important;
+        gap: 32px !important;
+        box-sizing: border-box !important;
+        z-index: 2;
+      }
+      .cover-header .logo {
+        height: 48px !important;
+        width: auto !important;
+        min-width: 120px !important;
+        max-width: 220px !important;
+        margin: 0 !important;
+        object-fit: contain !important;
+        display: block !important;
+      }
+      .cover-header-info {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        gap: 6px !important;
+        margin-left: 24px !important;
+        margin-top: 2px !important;
+      }
+      .cover-property-for-sale {
+        font-size: 22px !important;
+        font-weight: 500 !important;
+        color: #222 !important;
+        margin-bottom: 4px !important;
+        letter-spacing: 0.01em !important;
+      }
+      .cover-created {
+        font-size: 14px !important;
+        color: #666 !important;
+        font-weight: 400 !important;
+      }
+      .cover-title {
+        font-size: 48px !important;
+        font-weight: 400 !important;
+        line-height: 1.1 !important;
+        letter-spacing: -0.01em !important;
+        color: #111 !important;
+        margin: 32px 48px 0 48px !important;
+        padding: 0 !important;
+        align-self: flex-start !important;
+        z-index: 2;
+      }
       .cover-image {
-        width: 100vw !important;
-        max-width: 100vw !important;
-        height: auto !important;
+        flex: 1 1 0%;
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        min-width: 0 !important;
         object-fit: cover !important;
-        margin-left: calc(-1 * (100vw - 100%) / 2) !important;
-        margin-right: 0 !important;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-        page-break-inside: avoid !important;
+        display: block !important;
+        margin: 0 !important;
+        border: none !important;
         border-radius: 0 !important;
         box-shadow: none !important;
-        display: block !important;
+        page-break-inside: avoid !important;
+        z-index: 1;
+      }
+      /* Remove extra spacing around cover image */
+      .cover-page > .cover-image {
+        margin: 0 !important;
+        padding: 0 !important;
       }
       /* Hide .cover-page for screen, show for print */
       @media screen {
         .cover-page { display: none !important; }
       }
-      /* Font sizes for cover */
-      .cover-title { font-size: 48px !important; }
-      .cover-property-for-sale { font-size: 22px !important; }
-      .cover-created { font-size: 14px !important; }
-      /* Explicit font-size rules for heading hierarchy and key elements */
+      /* Font sizes for cover and main */
       .h1 { font-size: 36px !important; }
       .h2 { font-size: 16px !important; }
       .h3 { font-size: 40px !important; }
