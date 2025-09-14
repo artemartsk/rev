@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
+  />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Taviraj:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (Play CDN) + custom theme -->
+  <script>
+    window.tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0A1320',
+            'navy-light': '#3E4A59',
+            beige: '#DCD5CC',
+            'beige-light': '#F6F3EF'
+          },
+          spacing: {
+            22: '5.5rem',
+            26: '6.5rem'
+          },
+          fontFamily: {
+            inter: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+            taviraj: ['Taviraj', 'serif']
+          },
+          screens: {
+            '3xl': '1920px'
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Landing</title>
+</head>
+<body class="min-h-screen bg-beige">
+
+  <!-- Header -->
+  <header class="bg-navy relative">
+    <div class="absolute inset-0 opacity-10">
+      <div class="w-full h-[1px] bg-beige absolute top-6 md:top-10"></div>
+    </div>
+    <div class="container mx-auto px-4 md:px-10 py-8 md:py-16 relative">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-16 gap-6">
+        <div class="flex items-center">
+          <img class="w-20 h-5 md:w-[138px] md:h-8 ml-3 md:ml-6" src="https://api.builder.io/api/v1/image/assets/TEMP/8ada34c4687212bbabe013ab7a0ce2cb23c94d9b?width=276" alt="Logo" />
+        </div>
+        <button class="bg-beige text-navy px-4 py-2 md:px-6 md:py-3 font-inter text-sm md:text-lg font-normal uppercase tracking-wide hover:bg-opacity-90 transition-all">
+          Contact Sales Manager
+        </button>
+      </div>
+      
+      <div class="text-center">
+        <div class="text-beige font-inter text-sm md:text-lg font-light uppercase tracking-[2px] md:tracking-[4px] mb-8 md:mb-14">meet the</div>
+        <h1 class="text-beige font-taviraj text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light uppercase leading-tight mb-8 md:mb-12 max-w-5xl mx-auto px-4">
+          New apartment buildings in Jakobsberg
+        </h1>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-0 max-w-6xl mx-auto border border-beige border-opacity-50">
+        <div class="flex items-center justify-center px-4 md:px-8 lg:px-12 py-4 md:py-6 border-b md:border-b-0 md:border-r border-beige border-opacity-50">
+          <span class="text-beige font-taviraj text-lg md:text-xl xl:text-2xl font-light text-center">$11,000,000</span>
+        </div>
+        <div class="flex items-center justify-center px-4 md:px-8 lg:px-12 py-4 md:py-6 border-b md:border-b-0 md:border-r border-beige border-opacity-50">
+          <span class="text-beige font-taviraj text-lg md:text-xl xl:text-2xl font-light text-center">4-Bedrooms</span>
+        </div>
+        <div class="flex items-center justify-center px-4 md:px-8 lg:px-12 py-4 md:py-6 border-b md:border-b-0 md:border-r border-beige border-opacity-50">
+          <span class="text-beige font-taviraj text-lg md:text-xl xl:text-2xl font-light text-center">4 Bathrooms</span>
+        </div>
+        <div class="flex items-center justify-center px-4 md:px-8 lg:px-12 py-4 md:py-6 border-b md:border-b-0 md:border-r border-beige border-opacity-50">
+          <span class="text-beige font-taviraj text-lg md:text-xl xl:text-2xl font-light text-center">426,38 m2</span>
+        </div>
+        <div class="flex items-center justify-center px-4 md:px-8 lg:px-12 py-4 md:py-6">
+          <span class="text-beige font-taviraj text-lg md:text-xl xl:text-2xl font-light text-center">Costa del Sol, Spain</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Concept -->
+  <section class="bg-beige-light py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-10 text-center">
+      <div class="text-navy-light font-inter text-xs font-medium uppercase tracking-[4px] md:tracking-[8px] mb-6 md:mb-8">concept</div>
+      <p class="text-navy-light font-taviraj text-lg md:text-2xl font-light uppercase leading-6 md:leading-8 max-w-4xl mx-auto">
+        The project in Jakobsberg is a unique opportunity for profitable investment in a rapidly developing area. We are confident in the success of this project due to the meticulously developed financial model, high construction quality, and strategic location. We invite you to join this promising project to create a new quality of life for future residents and ensure attractive financial results for our investors.
+      </p>
+    </div>
+  </section>
+
+  <!-- Prime Location -->
+  <section class="relative">
+    <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-beige to-transparent z-10"></div>
+    <div class="absolute bottom-0 left-0 w-full h-52 bg-gradient-to-t from-beige to-transparent z-10"></div>
+    
+    <div class="text-center py-8 md:py-16 relative z-20 px-4">
+      <h2 class="text-navy font-taviraj text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light uppercase leading-tight max-w-4xl mx-auto">
+        Prime location beetwen rio real and elvira
+      </h2>
+    </div>
+    
+    <div class="relative">
+      <img
+        class="w-full h-64 md:h-[500px] lg:h-[740px] object-cover"
+        src="https://api.builder.io/api/v1/image/assets/TEMP/92b7f221cb1b6546d957cab57b81ef097b7ad5b3?width=3286"
+        alt="Prime location aerial view"
+      />
+    </div>
+  </section>
+
+  <!-- Location Stats -->
+  <section class="bg-beige py-12 md:py-20">
+    <div class="container mx-auto px-4 md:px-12 lg:px-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        <!-- Card 1 -->
+        <div class="bg-beige-light p-4 md:p-8 h-64 md:h-80 flex flex-col justify-between">
+          <div class="flex items-start gap-2 md:gap-3">
+            <div class="text-navy font-taviraj text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light uppercase leading-none">
+              8
+            </div>
+            <div class="pt-2 md:pt-4">
+              <div class="text-navy font-inter text-xs font-medium uppercase tracking-[1px] md:tracking-[2px] leading-4 md:leading-6">
+                min Drive by car
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2 md:space-y-4">
+            <div class="text-navy-light font-taviraj text-lg md:text-xl lg:text-2xl font-light uppercase tracking-[1px] md:tracking-[2px]">
+              location title
+            </div>
+            <div class="w-full h-px bg-black opacity-10"></div>
+            <div class="text-black font-inter text-sm opacity-30">
+              0.6 km
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-beige-light p-4 md:p-8 h-64 md:h-80 flex flex-col justify-between">
+          <div class="flex items-start gap-2 md:gap-3">
+            <div class="text-navy font-taviraj text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light uppercase leading-none">
+              12
+            </div>
+            <div class="pt-2 md:pt-4">
+              <div class="text-navy font-inter text-xs font-medium uppercase tracking-[1px] md:tracking-[2px] leading-4 md:leading-6">
+                min Drive by car
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2 md:space-y-4">
+            <div class="text-navy-light font-taviraj text-lg md:text-xl lg:text-2xl font-light uppercase tracking-[1px] md:tracking-[2px]">
+              location title
+            </div>
+            <div class="w-full h-px bg-black opacity-10"></div>
+            <div class="text-black font-inter text-sm opacity-30">
+              0.6 km
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-beige-light p-4 md:p-8 h-64 md:h-80 flex flex-col justify-between">
+          <div class="flex items-start gap-2 md:gap-3">
+            <div class="text-navy font-taviraj text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light uppercase leading-none">
+              8
+            </div>
+            <div class="pt-2 md:pt-4">
+              <div class="text-navy font-inter text-xs font-medium uppercase tracking-[1px] md:tracking-[2px] leading-4 md:leading-6">
+                min Drive by car
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2 md:space-y-4">
+            <div class="text-navy-light font-taviraj text-lg md:text-xl lg:text-2xl font-light uppercase tracking-[1px] md:tracking-[2px]">
+              location title
+            </div>
+            <div class="w-full h-px bg-black opacity-10"></div>
+            <div class="text-black font-inter text-sm opacity-30">
+              0.6 km
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-beige-light p-4 md:p-8 h-64 md:h-80 flex flex-col justify-between">
+          <div class="flex items-start gap-2 md:gap-3">
+            <div class="text-navy font-taviraj text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light uppercase leading-none">
+              8
+            </div>
+            <div class="pt-2 md:pt-4">
+              <div class="text-navy font-inter text-xs font-medium uppercase tracking-[1px] md:tracking-[2px] leading-4 md:leading-6">
+                min Drive by car
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2 md:space-y-4">
+            <div class="text-navy-light font-taviraj text-lg md:text-xl lg:text-2xl font-light uppercase tracking-[1px] md:tracking-[2px]">
+              location title
+            </div>
+            <div class="w-full h-px bg-black opacity-10"></div>
+            <div class="text-black font-inter text-sm opacity-30">
+              0.6 km
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Description -->
+  <section class="bg-navy py-12 md:py-24 relative">
+    <div class="absolute top-0 left-0 w-full h-px bg-beige opacity-10"></div>
+    <div class="absolute bottom-0 left-0 w-full h-px bg-beige opacity-10"></div>
+
+    <div class="container mx-auto px-4 md:px-12 lg:px-24">
+      <div class="text-center mb-8 md:mb-16">
+        <img class="w-20 h-5 md:w-[138px] md:h-8 mx-auto mb-4 md:mb-8" src="https://api.builder.io/api/v1/image/assets/TEMP/faad0a40dc22353022271dae110f681518cb5054?width=276" alt="Logo" />
+        <h2 class="text-beige font-taviraj text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light uppercase leading-tight">
+          Description
+        </h2>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-8 md:gap-16 mb-8 md:mb-16">
+        <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light leading-6 md:leading-8">
+          The project in Jakobsberg is a unique opportunity for profitable investment in a rapidly developing area. We are confident in the success of this project due to the meticulously developed financial model, high construction quality, and strategic location. We invite you to join this promising project to create a new quality of life for future residents and ensure attractive financial results for our investors.
+        </div>
+        <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light leading-6 md:leading-8">
+          The project in Jakobsberg is a unique opportunity for profitable investment in a rapidly developing area. We are confident in the success of this project due to the meticulously developed financial model, high construction quality, and strategic location. We invite you to join this promising project to create a new quality of life for future residents and ensure attractive financial results for our investors.
+        </div>
+      </div>
+      
+      <div class="w-full h-px bg-beige opacity-40 mb-8 md:mb-16"></div>
+
+      <div class="grid lg:grid-cols-2 gap-8 md:gap-16">
+        <div>
+          <div class="flex justify-between items-center mb-4 md:mb-6">
+            <h3 class="text-beige font-taviraj text-2xl md:text-3xl lg:text-4xl font-light">Property details</h3>
+          </div>
+          <div class="w-full h-px bg-beige opacity-40 mb-6 md:mb-8"></div>
+          
+          <div class="space-y-8">
+            <!-- Row 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Terraces</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">110 m²</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Object type</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">Detached House</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Condition</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">Very good</div>
+              </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Bedrooms</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">4</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Bathrooms</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">3</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Number of Floors</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">2</div>
+              </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Garages</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">1</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Parking spaces</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">2</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Total surface</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">~245 m²</div>
+              </div>
+            </div>
+            <!-- Row 4 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Living area</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">~245 m²</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Plot surface</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">~1,406 m²</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Flooring</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">Tiles</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="flex justify-between items-center mb-4 md:mb-6">
+            <h3 class="text-beige font-taviraj text-2xl md:text-3xl lg:text-4xl font-light">Features</h3>
+          </div>
+          <div class="w-full h-px bg-beige opacity-40 mb-6 md:mb-8"></div>
+          
+          <div class="flex flex-wrap gap-2 md:gap-4">
+            <div class="px-3 py-2 md:px-6 md:py-3 rounded-full border border-beige border-opacity-20">
+              <span class="text-beige font-taviraj text-sm md:text-lg lg:text-xl xl:text-2xl font-light">Private Pool</span>
+            </div>
+            <div class="px-3 py-2 md:px-6 md:py-3 rounded-full border border-beige border-opacity-20">
+              <span class="text-beige font-taviraj text-sm md:text-lg lg:text-xl xl:text-2xl font-light">Private Garden</span>
+            </div>
+            <div class="px-3 py-2 md:px-6 md:py-3 rounded-full border border-beige border-opacity-20">
+              <span class="text-beige font-taviraj text-sm md:text-lg lg:text-xl xl:text-2xl font-light">Private Garden</span>
+            </div>
+            <div class="px-3 py-2 md:px-6 md:py-3 rounded-full border border-beige border-opacity-20">
+              <span class="text-beige font-taviraj text-sm md:text-lg lg:text-xl xl:text-2xl font-light">Private Garden</span>
+            </div>
+            <div class="px-3 py-2 md:px-6 md:py-3 rounded-full border border-beige border-opacity-20">
+              <span class="text-beige font-taviraj text-sm md:text-lg lg:text-xl xl:text-2xl font-light">Private Garden</span>
+            </div>
+            <div class="px-3 py-2 md:px-6 md:py-3 rounded-full border border-beige border-opacity-20">
+              <span class="text-beige font-taviraj text-sm md:text-lg lg:text-xl xl:text-2xl font-light">Private Garden</span>
+            </div>
+            <div class="px-3 py-2 md:px-6 md:py-3 rounded-full border border-beige border-opacity-20">
+              <span class="text-beige font-taviraj text-sm md:text-lg lg:text-xl xl:text-2xl font-light">Private Garden</span>
+            </div>
+            <div class="px-3 py-2 md:px-6 md:py-3 rounded-full border border-beige border-opacity-20">
+              <span class="text-beige font-taviraj text-sm md:text-lg lg:text-xl xl:text-2xl font-light">Private Garden</span>
+            </div>
+            <div class="px-3 py-2 md:px-6 md:py-3 rounded-full border border-beige border-opacity-20">
+              <span class="text-beige font-taviraj text-sm md:text-lg lg:text-xl xl:text-2xl font-light">Private Garden</span>
+            </div>
+            <div class="px-3 py-2 md:px-6 md:py-3 rounded-full border border-beige border-opacity-20">
+              <span class="text-beige font-taviraj text-sm md:text-lg lg:text-xl xl:text-2xl font-light">Private Garden</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery A -->
+  <section class="bg-beige py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-12 lg:px-24">
+      <div class="space-y-8 md:space-y-16 lg:space-y-26">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-22">
+          <img class="w-full h-64 md:h-80 lg:h-[600px] object-cover" src="https://api.builder.io/api/v1/image/assets/TEMP/4411fa14844caaca4da0fd02da534e73025b12d2?width=1360" alt="Property exterior" />
+          <img class="w-full h-80 md:h-96 lg:h-[937px] object-cover" src="https://api.builder.io/api/v1/image/assets/TEMP/a929b9abbca716f897ecf50da3cac010f532638b?width=1360" alt="Property exterior" />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-22">
+          <img class="w-full h-80 md:h-96 lg:h-[937px] object-cover" src="https://api.builder.io/api/v1/image/assets/TEMP/a929b9abbca716f897ecf50da3cac010f532638b?width=1360" alt="Property exterior" />
+          <img class="w-full h-64 md:h-80 lg:h-[600px] object-cover" src="https://api.builder.io/api/v1/image/assets/TEMP/4411fa14844caaca4da0fd02da534e73025b12d2?width=1360" alt="Property exterior" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interior -->
+  <section class="bg-beige">
+    <img class="w-full h-64 md:h-96 lg:h-[700px] xl:h-[1038px] object-cover" src="https://api.builder.io/api/v1/image/assets/TEMP/3506d407fa879a677c81c1491abb0e124ac196d9?width=3280" alt="Interior living space" />
+  </section>
+
+  <!-- Gallery B (repeat) -->
+  <section class="bg-beige py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-12 lg:px-24">
+      <div class="space-y-8 md:space-y-16 lg:space-y-26">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-22">
+          <img class="w-full h-64 md:h-80 lg:h-[600px] object-cover" src="https://api.builder.io/api/v1/image/assets/TEMP/4411fa14844caaca4da0fd02da534e73025b12d2?width=1360" alt="Property exterior" />
+          <img class="w-full h-80 md:h-96 lg:h-[937px] object-cover" src="https://api.builder.io/api/v1/image/assets/TEMP/a929b9abbca716f897ecf50da3cac010f532638b?width=1360" alt="Property exterior" />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-22">
+          <img class="w-full h-80 md:h-96 lg:h-[937px] object-cover" src="https://api.builder.io/api/v1/image/assets/TEMP/a929b9abbca716f897ecf50da3cac010f532638b?width=1360" alt="Property exterior" />
+          <img class="w-full h-64 md:h-80 lg:h-[600px] object-cover" src="https://api.builder.io/api/v1/image/assets/TEMP/4411fa14844caaca4da0fd02da534e73025b12d2?width=1360" alt="Property exterior" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy py-12 md:py-24 relative">
+    <div class="absolute top-0 left-0 w-full h-px bg-beige opacity-10"></div>
+    <div class="absolute bottom-0 left-0 w-full h-px bg-beige opacity-10"></div>
+
+    <div class="container mx-auto px-4 md:px-10">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-16 md:mb-32">
+        <div>
+          <img class="w-20 h-5 md:w-[138px] md:h-8 mb-4 md:mb-6" src="https://api.builder.io/api/v1/image/assets/TEMP/8ada34c4687212bbabe013ab7a0ce2cb23c94d9b?width=276" alt="Logo" />
+          <div class="text-beige font-taviraj text-lg md:text-2xl font-light uppercase">contact</div>
+        </div>
+        <div class="text-left md:text-right">
+          <div class="text-beige font-taviraj text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light uppercase mb-1 md:mb-2">+34 (951) 870-900</div>
+          <div class="text-beige font-taviraj text-lg md:text-2xl font-light">mail@mail.com</div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <h2 class="text-beige font-taviraj text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl font-light uppercase leading-tight mb-8 md:mb-12 max-w-4xl mx-auto px-4">
+          trust us to guide you
+        </h2>
+        <button class="bg-beige text-navy px-6 py-3 md:px-8 md:py-4 lg:px-12 lg:py-6 font-inter text-lg md:text-xl lg:text-2xl font-normal uppercase tracking-wide hover:bg-opacity-90 transition-all">
+          Contact Sales Manager
+        </button>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
