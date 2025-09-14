@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Contemporary 5-bed villa with pool in Huerta Belón, Marbella</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Предполагается, что utility-классы (Tailwind/кастом) уже подключены глобально -->
+  <style>
+    /* Карта: клик для активации (чтобы на мобиле скролл не перехватывала) */
+    #map-wrap { position: relative; }
+    #map-wrap .map-frame { pointer-events: none; }
+    #map-wrap.enabled .map-frame { pointer-events: auto; }
+    .map-overlay[hidden] { display: none; }
+  </style>
+</head>
+<body class="min-h-screen bg-beige">
+
+  <!-- ===================== Header ===================== -->
+  <header class="bg-navy relative">
+    <div class="absolute inset-0 opacity-10">
+      <div class="w-full h-[1px] bg-beige absolute top-6 md:top-10"></div>
+    </div>
+
+    <div class="container mx-auto px-4 md:px-10 py-8 md:py-16 relative">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-16 gap-6">
+        <div class="flex items-center">
+          <!-- Логотип-эмблема из исходника -->
+          <svg class="w-24 h-8 md:w-38 md:h-12" viewBox="0 0 153 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g clip-path="url(#clip0_2002_15304)">
+              <path d="M80.6346 12.0601C80.6346 13.7898 79.2484 15.1832 77.5277 15.1832C75.807 15.1832 74.4209 13.7898 74.4209 12.0601C74.4209 10.3303 75.7592 8.93694 77.5277 8.93694C79.2962 8.98498 80.6346 10.3784 80.6346 12.0601ZM67.8248 18.3544C67.8248 18.6426 67.8248 19.1231 67.8248 19.1231C67.8248 19.1231 66.3431 17.2012 63.1885 17.2012C57.9785 17.2012 53.9157 21.1892 53.9157 26.7147C53.9157 32.1922 57.9307 36.2282 63.1885 36.2282C66.3909 36.2282 67.8248 34.2583 67.8248 34.2583V35.0751C67.8248 35.4595 68.1116 35.7477 68.494 35.7477H72.3656V17.6817C72.3656 17.6817 68.8286 17.6817 68.494 17.6817C68.1116 17.6817 67.8248 18.018 67.8248 18.3544ZM67.8248 29.9339C67.1079 30.991 65.6739 31.9039 63.9532 31.9039C60.8942 31.9039 58.5521 29.982 58.5521 26.7147C58.5521 23.4474 60.8942 21.5255 63.9532 21.5255C65.6261 21.5255 67.1556 22.4865 67.8248 23.4955V29.9339ZM75.2334 17.6817H79.822V35.7477H75.2334V17.6817ZM143.775 17.2012C140.621 17.2012 139.139 19.1231 139.139 19.1231V8.98499H134.55V35.7477C134.55 35.7477 138.087 35.7477 138.422 35.7477C138.804 35.7477 139.091 35.4114 139.091 35.0751V34.2583C139.091 34.2583 140.573 36.2282 143.727 36.2282C148.937 36.2282 153 32.1922 153 26.7147C153 21.2372 148.937 17.2012 143.775 17.2012ZM143.01 31.8559C141.242 31.8559 139.856 30.9429 139.139 29.8859V23.4474C139.856 22.4865 141.385 21.4775 143.01 21.4775C146.069 21.4775 148.412 23.3994 148.412 26.6667C148.412 29.9339 146.069 31.8559 143.01 31.8559ZM132.16 25.033V35.7958H127.572V25.5616C127.572 22.5826 126.616 21.3814 124.035 21.3814C122.649 21.3814 121.215 22.1021 120.307 23.1592V35.7477H115.718V17.6817H119.351C119.733 17.6817 120.02 18.018 120.02 18.3544V19.1231C121.358 17.7297 123.127 17.2012 124.895 17.2012C126.903 17.2012 128.576 17.7778 129.914 18.9309C131.539 20.2763 132.16 22.006 132.16 25.033ZM104.581 17.2012C101.427 17.2012 99.9448 19.1231 99.9448 19.1231V8.98499H95.3562V35.7477C95.3562 35.7477 98.8932 35.7477 99.2278 35.7477C99.6102 35.7477 99.897 35.4114 99.897 35.0751V34.2583C99.897 34.2583 101.379 36.2282 104.533 36.2282C109.743 36.2282 113.806 32.1922 113.806 26.7147C113.854 21.2372 109.791 17.2012 104.581 17.2012ZM103.816 31.8559C102.048 31.8559 100.662 30.9429 99.9448 29.8859V23.4474C100.662 22.4865 102.191 21.4775 103.816 21.4775C106.875 21.4775 109.218 23.3994 109.218 26.6667C109.218 29.9339 106.875 31.8559 103.816 31.8559ZM91.389 17.2012C92.7751 17.2012 93.4921 17.4414 93.4921 17.4414V21.7177C93.4921 21.7177 89.6683 20.4204 87.2784 23.1592V35.7958H82.6899V17.6817C82.6899 17.6817 86.2269 17.6817 86.5615 17.6817C86.9438 17.6817 87.2306 18.018 87.2306 18.3544V19.1231C88.091 18.1141 89.9551 17.2012 91.389 17.2012ZM43.7348 34.1141C43.4959 33.5375 43.2569 32.9129 43.0179 32.3844C42.6355 31.5195 42.2531 30.7027 41.9185 29.9339L41.8707 29.8859C38.5727 22.6787 35.0357 15.3754 31.3075 8.16817L31.1641 7.87988C30.7817 7.15916 30.3993 6.39039 30.0169 5.62162C29.539 4.75676 29.061 3.84384 28.2962 2.97898C26.7667 1.05706 24.568 0 22.2259 0C19.8361 0 17.6852 1.05706 16.1079 2.88288C15.3909 3.74775 14.8651 4.66066 14.3871 5.52553C14.0048 6.29429 13.6224 7.06306 13.24 7.78378L13.0966 8.07207C9.4162 15.2793 5.83138 22.5826 2.53335 29.7898L2.48555 29.8859C2.15097 30.6547 1.76859 31.4715 1.38621 32.3363C1.14722 32.8649 0.908231 33.4414 0.669243 34.0661C0.0478745 35.8438 -0.143316 37.5255 0.095672 39.2553C0.621445 42.8589 3.01132 45.8859 6.30936 47.2312C7.55209 47.7598 8.84263 48 10.181 48C10.5633 48 11.0413 47.9519 11.4237 47.9039C13.001 47.7117 14.6261 47.1832 16.2035 46.2703C18.1632 45.1652 20.0273 43.5796 22.1303 41.2733C24.2334 43.5796 26.1453 45.1652 28.0572 46.2703C29.6346 47.1832 31.2597 47.7117 32.837 47.9039C33.2194 47.9519 33.6974 48 34.0797 48C35.4181 48 36.7564 47.7598 37.9513 47.2312C41.2972 45.8859 43.6393 42.8108 44.165 39.2553C44.5474 37.5736 44.3562 35.8919 43.7348 34.1141Z" fill="#DCD5CC"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_2002_15304">
+                <rect width="153" height="48" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+
+          <!-- Лого агентства -->
+          <img class="w-20 h-5 md:w-[138px] md:h-8 ml-3 md:ml-6" src="https://st3.idealista.com/78/66/68/edwardpartners.gif" alt="Edward & Partners" />
+        </div>
+
+        <a href="https://www.idealista.com/en/inmueble/106154934/" class="bg-beige text-navy px-4 py-2 md:px-6 md:py-3 font-inter text-sm md:text-lg font-normal uppercase tracking-wide hover:bg-opacity-90 transition-all">
+          See full listing and 3D tour
+        </a>
+      </div>
+
+      <div class="text-center">
+        <div class="text-beige font-inter text-sm md:text-lg font-light uppercase tracking-[2px] md:tracking-[4px] mb-8 md:mb-14">
+          Huerta Belón-Calvario, Marbella
+        </div>
+        <h1 class="text-beige font-taviraj text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light uppercase leading-tight mb-8 md:mb-12 max-w-5xl mx-auto px-4">
+          Contemporary 5-bed villa with pool in Huerta Belón, Marbella
+        </h1>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-0 max-w-6xl mx-auto border border-beige border-opacity-50">
+        <div class="flex items-center justify-center px-4 md:px-8 lg:px-12 py-4 md:py-6 border-b md:border-b-0 md:border-r border-beige border-opacity-50">
+          <span class="text-beige font-taviraj text-lg md:text-xl xl:text-2xl font-light text-center">
+            €2 349 000
+          </span>
+        </div>
+        <div class="flex items-center justify-center px-4 md:px-8 lg:px-12 py-4 md:py-6 border-b md:border-b-0 md:border-r border-beige border-opacity-50">
+          <span class="text-beige font-taviraj text-lg md:text-xl xl:text-2xl font-light text-center">
+            5 Bedrooms
+          </span>
+        </div>
+        <div class="flex items-center justify-center px-4 md:px-8 lg:px-12 py-4 md:py-6 border-b md:border-b-0 md:border-r border-beige border-opacity-50">
+          <span class="text-beige font-taviraj text-lg md:text-xl xl:text-2xl font-light text-center">
+            5 Bathrooms
+          </span>
+        </div>
+        <div class="flex items-center justify-center px-4 md:px-8 lg:px-12 py-4 md:py-6 border-b md:border-b-0 md:border-r border-beige border-opacity-50">
+          <span class="text-beige font-taviraj text-lg md:text-xl xl:text-2xl font-light text-center">
+            339 m²
+          </span>
+        </div>
+        <div class="flex items-center justify-center px-4 md:px-8 lg:px-12 py-4 md:py-6">
+          <span class="text-beige font-taviraj text-lg md:text-xl xl:text-2xl font-light text-center">
+            Marbella, Spain
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== Concept ===================== -->
+  <section class="bg-beige-light py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-10 text-center">
+      <div class="text-navy-light font-inter text-xs font-medium uppercase tracking-[4px] md:tracking-[8px] mb-6 md:mb-8">concept</div>
+      <p class="text-navy-light font-taviraj text-lg md:text-2xl font-light uppercase leading-6 md:leading-8 max-w-4xl mx-auto">
+        The project in Jakobsberg is a unique opportunity for profitable investment in a rapidly developing area. We are confident in the success of this project due to the meticulously developed financial model, high construction quality, and strategic location. We invite you to join this promising project to create a new quality of life for future residents and ensure attractive financial results for our investors.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== Prime Location ===================== -->
+  <section class="relative">
+    <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-beige to-transparent z-10"></div>
+    <div class="absolute bottom-0 left-0 w-full h-52 bg-gradient-to-t from-beige to-transparent z-10"></div>
+
+    <div class="text-center py-8 md:py-16 relative z-20 px-4">
+      <h2 class="text-navy font-taviraj text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light uppercase leading-tight max-w-4xl mx-auto">
+        Modern 5-bed luxury villa with pool in Marbella center
+      </h2>
+    </div>
+
+    <div class="relative">
+      <img
+        class="w-full h-64 md:h-[500px] lg:h-[740px] object-cover"
+        src="https://img4.idealista.com/blur/WEB_DETAIL_TOP-L-P/0/id.pro.es.image.master/c7/cc/de/1281745930.jpg"
+        alt="Contemporary 5-bed villa with pool in Huerta Belón, Marbella"
+      />
+    </div>
+  </section>
+
+  <!-- ===================== Location Stats (4 карточки) ===================== -->
+  <section class="bg-beige py-12 md:py-20">
+    <div class="container mx-auto px-4 md:px-12 lg:px-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        <!-- Card 0 -->
+        <div class="bg-beige-light p-4 md:p-8 h-64 md:h-80 flex flex-col justify-between">
+          <div class="flex items-start gap-2 md:gap-3">
+            <div class="text-navy font-taviraj text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light uppercase leading-none">
+              0.8
+            </div>
+            <div class="pt-2 md:pt-4">
+              <div class="text-navy font-inter text-xs font-medium uppercase tracking-[1px] md:tracking-[2px] leading-4 md:leading-6">
+                km to
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2 md:space-y-4">
+            <div class="text-navy-light font-taviraj text-lg md:text-xl lg:text-2xl font-light uppercase tracking-[1px] md:tracking-[2px]">
+              Marbella Old Town
+            </div>
+            <div class="w-full h-px bg-black opacity-10"></div>
+            <div class="text-black font-inter text-sm opacity-30">
+              Marbella, Spain
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 1 -->
+        <div class="bg-beige-light p-4 md:p-8 h-64 md:h-80 flex flex-col justify-between">
+          <div class="flex items-start gap-2 md:gap-3">
+            <div class="text-navy font-taviraj text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light uppercase leading-none">
+              0.9
+            </div>
+            <div class="pt-2 md:pt-4">
+              <div class="text-navy font-inter text-xs font-medium uppercase tracking-[1px] md:tracking-[2px] leading-4 md:leading-6">
+                km to
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2 md:space-y-4">
+            <div class="text-navy-light font-taviraj text-lg md:text-xl lg:text-2xl font-light uppercase tracking-[1px] md:tracking-[2px]">
+              Playa de la Fontanilla
+            </div>
+            <div class="w-full h-px bg-black opacity-10"></div>
+            <div class="text-black font-inter text-sm opacity-30">
+              Marbella, Spain
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-beige-light p-4 md:p-8 h-64 md:h-80 flex flex-col justify-between">
+          <div class="flex items-start gap-2 md:gap-3">
+            <div class="text-navy font-taviraj text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light uppercase leading-none">
+              6.5
+            </div>
+            <div class="pt-2 md:pt-4">
+              <div class="text-navy font-inter text-xs font-medium uppercase tracking-[1px] md:tracking-[2px] leading-4 md:leading-6">
+                km to
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2 md:space-y-4">
+            <div class="text-navy-light font-taviraj text-lg md:text-xl lg:text-2xl font-light uppercase tracking-[1px] md:tracking-[2px]">
+              Puerto Banús
+            </div>
+            <div class="w-full h-px bg-black opacity-10"></div>
+            <div class="text-black font-inter text-sm opacity-30">
+              Marbella, Spain
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-beige-light p-4 md:p-8 h-64 md:h-80 flex flex-col justify-between">
+          <div class="flex items-start gap-2 md:gap-3">
+            <div class="text-navy font-taviraj text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light uppercase leading-none">
+              2.1
+            </div>
+            <div class="pt-2 md:pt-4">
+              <div class="text-navy font-inter text-xs font-medium uppercase tracking-[1px] md:tracking-[2px] leading-4 md:leading-6">
+                km to
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2 md:space-y-4">
+            <div class="text-navy-light font-taviraj text-lg md:text-xl lg:text-2xl font-light uppercase tracking-[1px] md:tracking-[2px]">
+              La Cañada Shopping
+            </div>
+            <div class="w-full h-px bg-black opacity-10"></div>
+            <div class="text-black font-inter text-sm opacity-30">
+              Marbella, Spain
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Description ===================== -->
+  <section class="bg-navy py-12 md:py-24 relative">
+    <div class="absolute top-0 left-0 w-full h-px bg-beige opacity-10"></div>
+    <div class="absolute bottom-0 left-0 w-full h-px bg-beige opacity-10"></div>
+
+    <div class="container mx-auto px-4 md:px-12 lg:px-24">
+      <div class="text-center mb-8 md:mb-16">
+        <img class="w-20 h-5 md:w-[138px] md:h-8 mx-auto mb-4 md:mb-8" src="https://st3.idealista.com/78/66/68/edwardpartners.gif" alt="Edward & Partners" />
+        <h2 class="text-beige font-taviraj text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light uppercase leading-tight">
+          Description
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 md:gap-16 mb-8 md:mb-16">
+        <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light leading-6 md:leading-8">
+          Contemporary 5-bed villa (2020) in Huerta Belón, just a 10-minute walk to Marbella Old Town and the beach. Bright open-plan living flows to generous terraces and a landscaped garden with heated pool and jacuzzi. Master suite with balcony, UFH in bathrooms and fitted wardrobes. Cinema room, gym, laundry and storage. Solar panels, AC, security system and secure on-plot parking. A turnkey luxury home steps from restaurants, shops and schools; 10 min drive to Puerto Banús.
+        </div>
+        <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light leading-6 md:leading-8">
+          Stylish villa marrying convenience and privacy in central Marbella. Sun-filled open-plan lounge/diner connects via large sliders to terraces for alfresco dining amid lush greenery. Five spacious bedrooms, including an impressive primary with private balcony and luxe en-suite; all with AC and fitted storage. Wellness and entertainment include a private cinema and a fully equipped gym. Outdoors: heated pool, jacuzzi and landscaped garden. Extras: solar panels, modern security, laundry, built-in storage and secure parking.
+        </div>
+      </div>
+
+      <div class="w-full h-px bg-beige opacity-40 mb-8 md:mb-16"></div>
+      <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light leading-6 md:leading-8 mb-8 md:mb-16">
+        Prime central location balancing tranquillity and access. A flat 10-minute walk reaches Marbella’s Old Town and Playa de la Fontanilla. Puerto Banús is about 10 minutes by car, and La Cañada shopping mall is roughly 5 minutes away. Daily needs are close by, with schools, cafés, supermarkets and a tennis & padel club within a short walk. Quick road access to A-7/AP-7 for easy links along the Costa del Sol.
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 md:gap-16">
+        <div>
+          <div class="flex justify-between items-center mb-4 md:mb-6">
+            <h3 class="text-beige font-taviraj text-2xl md:text-3xl lg:text-4xl font-light">Property details</h3>
+          </div>
+          <div class="w-full h-px bg-beige opacity-40 mb-6 md:mb-8"></div>
+
+          <div class="space-y-8">
+            <!-- 4 строки по 3 элемента как в исходнике -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Terraces</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">0 m²</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Object type</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">Villa</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Condition</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">Second hand / good condition (built 2020)</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Bedrooms</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">5</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Bathrooms</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">5</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Floor</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">—</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Garages</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">1</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Storage rooms</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">1</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Total surface</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">339 m²</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Living area</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">0 m²</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Plot surface</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">— m²</div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-white font-inter text-xs font-medium uppercase tracking-[2px] md:tracking-[4px] opacity-50">Energy rating</div>
+                <div class="text-beige font-taviraj text-lg md:text-xl lg:text-2xl font-light">A</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center mb-4 md:mb-6">
+            <h3 class="text-beige font-taviraj text-2xl md:text-3xl lg:text-4xl font-light">Features</h3>
+          </div>
+          <div class="w-full h-px bg-beige opacity-40 mb-6 md:mb-8"></div>
+
+          <div class="flex flex-wrap gap-2 md:gap-4">
+            <div class="px-3 py-2 md:px-6 md:py-3 rounded-full border border-beige border-opacity-20">
+              <span class="text-beige font-taviraj text-sm md:text-lg lg:text-xl xl:text-2xl font-light">
+                Air conditioning, Private pool, Heated pool, Jacuzzi, Garden, Cinema room, Gym, Laundry room, Storage room, Fitted wardrobes, Underfloor heating (bathrooms), Solar panels, Security system, Terrace, Balcony, Walk to beach, Walk to Old Town, Energy rating A, Parking, Central Marbella
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Gallery (две строки) ===================== -->
+  <section class="bg-beige py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-12 lg:px-24">
+      <div class="space-y-8 md:space-y-16 lg:space-y-26">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-22">
+          <img class="w-full h-64 md:h-80 lg:h-[600px] object-cover" src="https://img4.idealista.com/blur/WEB_DETAIL/0/id.pro.es.image.master/80/20/77/1274162969.jpg" alt="Property exterior" />
+          <img class="	w-full h-80 md:h-96 lg:h-[937px] object-cover" src="https://img4.idealista.com/blur/WEB_DETAIL/0/id.pro.es.image.master/52/d6/ac/1274162970.jpg" alt="Property exterior" />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-22">
+          <img class="w-full h-80 md:h-96 lg:h-[937px] object-cover" src="https://img4.idealista.com/blur/WEB_DETAIL/0/id.pro.es.image.master/17/93/b8/1274162960.jpg" alt="Property exterior" />
+          <img class="w-full h-64 md:h-80 lg:h-[600px] object-cover" src="https://img4.idealista.com/blur/WEB_DETAIL/0/id.pro.es.image.master/5c/00/6d/1274162945.jpg" alt="Property exterior" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Interior full-bleed ===================== -->
+  <section class="bg-beige">
+    <img class="w-full h-64 md:h-96 lg:h-[700px] xl:h-[1038px] object-cover" src="https://img4.idealista.com/blur/WEB_DETAIL/0/id.pro.es.image.master/ac/e8/1a/1274162957.jpg" alt="Contemporary 5-bed villa with pool in Huerta Belón, Marbella" />
+  </section>
+
+  <!-- Ещё одна галерея (как в исходнике повтор) -->
+  <section class="bg-beige py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-12 lg:px-24">
+      <div class="space-y-8 md:space-y-16 lg:space-y-26">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-22">
+          <img class="w-full h-64 md:h-80 lg:h-[600px] object-cover" src="https://img4.idealista.com/blur/WEB_DETAIL/0/id.pro.es.image.master/93/0b/16/1274162959.jpg" alt="Property interior" />
+          <img class="w-full h-80 md:h-96 lg:h-[937px] object-cover" src="https://img4.idealista.com/blur/WEB_DETAIL/0/id.pro.es.image.master/04/ba/51/1274162951.jpg" alt="Property interior" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Map (OpenStreetMap) ===================== -->
+  <section class="bg-beige py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-12 lg:px-24">
+      <div class="mb-6 md:mb-10">
+        <h2 class="text-navy font-taviraj text-3xl md:text-4xl lg:text-5xl font-light uppercase">Location map</h2>
+        <div class="text-navy/60 font-inter text-sm md:text-base mt-2">
+          Avenida Huerta Belón, 14-20, Huerta Belón-Calvario, Marbella
+        </div>
+      </div>
+
+      <div id="map-wrap" class="relative overflow-hidden">
+        <div class="w-full h-[320px] md:h-[520px] bg-beige-light">
+          <iframe
+            title="OpenStreetMap"
+            class="map-frame w-full h-full border-0"
+            loading="lazy"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-4.9034169%2C36.5025783%2C-4.8834169%2C36.5225783&layer=mapnik&marker=36.5125783%2C-4.8934169">
+          </iframe>
+        </div>
+
+        <!-- Overlay button -->
+        <button id="map-enable-btn" type="button" class="map-overlay absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors">
+          <span class="bg-beige text-navy px-4 py-2 md:px-6 md:py-3 font-inter uppercase tracking-wide">Enable map</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="bg-navy py-12 md:py-24 relative">
+    <div class="absolute top-0 left-0 w-full h-px bg-beige opacity-10"></div>
+    <div class="absolute bottom-0 left-0 w-full h-px bg-beige opacity-10"></div>
+
+    <div class="container mx-auto px-4 md:px-10">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-16 md:mb-32">
+        <div>
+          <img class="w-20 h-5 md:w-[138px] md:h-8 mb-4 md:mb-6" src="https://st3.idealista.com/78/66/68/edwardpartners.gif" alt="Edward & Partners" />
+          <div class="text-beige font-taviraj text-lg md:text-2xl font-light uppercase">contact</div>
+        </div>
+        <div class="text-left md:text-right">
+          <div class="text-beige font-taviraj text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light uppercase mb-1 md:mb-2"></div>
+          <div class="text-beige font-taviraj text-lg md:text-2xl font-light"></div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <h2 class="text-beige font-taviraj text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl font-light uppercase leading-tight mb-8 md:mb-12 max-w-4xl mx-auto px-4">
+          trust us to guide you
+        </h2>
+        <a href="https://www.idealista.com/en/inmueble/106154934/" class="bg-beige text-navy px-6 py-3 md:px-8 md:py-4 lg:px-12 lg:py-6 font-inter text-lg md:text-xl lg:text-2xl font-normal uppercase tracking-wide hover:bg-opacity-90 transition-all">
+          See full listing and 3D tour
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('map-enable-btn');
+      var wrap = document.getElementById('map-wrap');
+      if (btn &amp;&amp; wrap) {
+        btn.addEventListener('click', function () {
+          wrap.classList.add('enabled');
+          btn.setAttribute('hidden', 'hidden');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
