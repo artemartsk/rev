@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lead Landing • Jonathan Hall</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'app-bg': '#f5f7fa',
+          'app-teal': '#116067',
+          'app-teal-light': '#17808a',
+          'app-cyan': '#29c1e3'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html{scroll-behavior:smooth}
+  button{cursor:pointer}
+  a[href]{cursor:pointer}
+  /* Fallback colors in case Tailwind custom colors don't load */
+  .bg-app-teal{background-color:#116067 !important}
+  .bg-app-teal-light{background-color:#17808a !important}
+  .text-app-cyan{color:#29c1e3 !important}
+  .bg-app-bg{background-color:#f5f7fa !important}
+</style>
+</head>
+<body class="min-h-screen bg-app-bg">
+  <!-- Header Section -->
+  <header class="px-6 lg:px-24 py-6 lg:py-10">
+    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+      <img src="https://atwvqdkcrvglxzquqefr.supabase.co/storage/v1/object/public/cash/revptologo.svg?width=341" alt="Riviera Logo" class="h-12 w-auto"/>
+      <div class="hidden lg:flex gap-4">
+        <a href="#contact" class="flex items-center justify-center px-6 py-3 lg:py-4 bg-black text-white rounded-lg text-sm lg:text-base font-normal hover:bg-gray-800 transition-colors">Contact Lead</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Lead Information Section -->
+  <section class="px-6 lg:px-24 pb-16">
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
+      <div class="flex flex-col gap-4 lg:w-[477px]">
+        <h2 class="text-2xl font-normal">Lead</h2>
+        <p class="text-xs text-black">Created 09 Aug 2025</p>
+      </div>
+      <div class="flex-1">
+        <h1 class="text-4xl lg:text-6xl font-normal mb-8">Jonathan Hall</h1>
+      </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 mt-20">
+      <div class="lg:w-[477px]">
+        <h3 class="text-lg font-normal mb-3">Budget</h3>
+        <div class="text-5xl lg:text-7xl font-normal">€350,000</div>
+        <!-- Contact Info (stacked under Budget in same column) -->
+        <div id="contact" class="mt-8">
+          <div class="max-w-xl">
+            <div class="mb-6">
+              <div class="text-xs font-bold">Phone</div>
+              <div class="text-base mt-1">+447801101427</div>
+            </div>
+            <div class="mb-6">
+              <div class="text-xs font-bold">Email</div>
+              <div class="text-base mt-1 break-all">Jonathan@hallassetmgmt.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1">
+        <p class="text-xl lg:text-2xl leading-relaxed">
+          Jonathan Hall is interested in purchasing a second home in Marbella, Costa Del Sol, with a budget up to €350,000. He is seeking a minimum 2-bedroom apartment, ideally with a pool and close to the sea and restaurants. He plans to use the property several months a year and utilize it for short-term rentals. Jonathan is at an early stage of his search, familiar with Marbella, and is open to exploring locations like Murcia and Valencia. He will require a mortgage for the purchase. The lead originated from a Facebook campaign, and a call attempt was recently answered.
+        </p>
+      </div>
+    </div>
+
+    <!-- Property Details Table -->
+    <div class="mt-12">
+      <div class="space-y-4">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6 py-1.5">
+          <div class="lg:w-[506px] text-base lg:text-xl font-normal">Type</div>
+          <div class="text-base lg:text-xl font-normal">Apartment</div>
+        </div>
+        <div class="h-px bg-black"></div>
+        <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6 py-1.5">
+          <div class="lg:w-[506px] text-base lg:text-xl font-normal">Timeline</div>
+          <div class="text-base lg:text-xl font-normal">October 2025</div>
+        </div>
+        <div class="h-px bg-black"></div>
+        <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6 py-1.5">
+          <div class="lg:w-[506px] text-base lg:text-xl font-normal">Size</div>
+          <div class="text-base lg:text-xl font-normal">Not specified</div>
+        </div>
+        <div class="h-px bg-black"></div>
+        <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6 py-1.5">
+          <div class="lg:w-[506px] text-base lg:text-xl font-normal">Beds</div>
+          <div class="text-base lg:text-xl font-normal">2+ bedrooms</div>
+        </div>
+        <div class="h-px bg-black"></div>
+        <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6 py-1.5">
+          <div class="lg:w-[506px] text-base lg:text-xl font-normal">Financing</div>
+          <div class="text-base lg:text-xl font-normal">Mortgage</div>
+        </div>
+        <div class="h-px bg-black"></div>
+        <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6 py-1.5">
+          <div class="lg:w-[506px] text-base lg:text-xl font-normal">Locations</div>
+          <div class="text-base lg:text-xl font-normal">Marbella, Costa Del Sol</div>
+        </div>
+        <div class="h-px bg-black"></div>
+        <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6 py-1.5">
+          <div class="lg:w-[506px] text-base lg:text-xl font-normal">Use</div>
+          <div class="text-base lg:text-xl font-normal">Second home + short-term rental</div>
+        </div>
+        <div class="h-px bg-black"></div>
+        <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6 py-1.5">
+          <div class="lg:w-[506px] text-base lg:text-xl font-normal">Rental</div>
+          <div class="text-base lg:text-xl font-normal">Short-term allowed</div>
+        </div>
+        <div class="h-px bg-black"></div>
+        <div class="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-6 py-1.5">
+          <div class="lg:w-[506px] text-base lg:text-xl font-normal">Features</div>
+          <div class="flex flex-wrap gap-4">
+            <button class="px-6 py-3 border border-black rounded-lg text-lg lg:text-xl font-normal">Pool</button>
+            <button class="px-6 py-3 border border-black rounded-lg text-lg lg:text-xl font-normal">Close to sea</button>
+            <button class="px-6 py-3 border border-black rounded-lg text-lg lg:text-xl font-normal">2+ bedrooms</button>
+            <button class="px-6 py-3 border border-black rounded-lg text-lg lg:text-xl font-normal">Holiday rental use</button>
+          </div>
+        </div>
+        <div class="h-px bg-black"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conversation Section -->
+  <section class="bg-white py-24 lg:py-36">
+    <div class="px-6 lg:px-24">
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
+        <div class="lg:w-[473px]">
+          <div class="text-xl mb-12">12 Aug 2025</div>
+        </div>
+
+        <div class="flex-1">
+          <div class="mb-6">
+            <button id="convToggle" type="button" class="w-full flex items-center justify-between px-2 py-2 rounded-md hover:bg-gray-100 transition-colors">
+              <h2 class="text-3xl lg:text-5xl font-normal">Conversation</h2>
+              <svg id="convArrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12 transition-transform duration-200 rotate-180">
+                <path fill-rule="evenodd" d="M12 14.5a1 1 0 0 1-.707-.293l-5-5a1 1 0 1 1 1.414-1.414L12 12.086l4.293-4.293a1 1 0 0 1 1.414 1.414l-5 5A1 1 0 0 1 12 14.5z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div id="convBody" class="space-y-6 hidden">
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold ">AI</div>
+                <div class="text-xl leading-relaxed ">Hi, Jonathan. It's Isabella from Riviera. I am calling about your property inquiry from Facebook.</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold text-right">Jonathan Hall</div>
+                <div class="text-xl leading-relaxed text-right">Sorry. Say again?</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold ">AI</div>
+                <div class="text-xl leading-relaxed ">Of course. Hi, Jonathan. This is Isabella from Raveiro. Thank you for your interest in property in Costa Del Sol. May I ask which specific area are you most interest example, Marbella, Estepona, Calahonda, etcetera.</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold text-right">Jonathan Hall</div>
+                <div class="text-xl leading-relaxed text-right">Yeah. Sorry. It's early stage of me, so I'm just returning back from work. You've hit me up with something. So I'm looking up either either timeshare in Marbella with Marriott. And I'm looking probably at a a a a a smaller base. I I know Marbella well. I like to just deploy the I'm looking at Mercia, Valencia. It's just an early date, so we try to get an idea of what's around the location through.</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold ">AI</div>
+                <div class="text-xl leading-relaxed ">Thank you, Jonathan. I've made a note that you're considering Marbella and possibly exploring other areas like Mercia or Valencia to help narrow things down. Could you let me know what type of property you're interested in? For example, are you looking for a villa, a apartment, or townhouse?</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold text-right">Jonathan Hall</div>
+                <div class="text-xl leading-relaxed text-right">Probably 2 bedroom apartments, a minimum</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold ">AI</div>
+                <div class="text-xl leading-relaxed ">Great. I've noted a minimum of 2 bedrooms in an apartment. May I ask, what is the main purpose of this purchase? Is it for a main residence a second home, short term rental, long term investment, or something else?</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold text-right">Jonathan Hall</div>
+                <div class="text-xl leading-relaxed text-right">Probably also, it said it's a a second home for me and family during several months of the year, and then a a rental asset property for the remainder.</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold ">AI</div>
+                <div class="text-xl leading-relaxed ">Thank you, Jonathan. I've made a note of that. Are there any specific features you'd like in the apartment? For example, a pool, terrace, parking, garden, or elevator?</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold text-right">Jonathan Hall</div>
+                <div class="text-xl leading-relaxed text-right">Probably a pull</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold ">AI</div>
+                <div class="text-xl leading-relaxed ">Understood. I've noted that a pool is important. Is there anything specific you'd like in the location, such as sea views, being close to the beach, near restaurants, golf courses, or a gym?</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold text-right">Jonathan Hall</div>
+                <div class="text-xl leading-relaxed text-right">Probably near restaurants and close to beach but not essential.</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold ">AI</div>
+                <div class="text-xl leading-relaxed ">Thank you. I've made a note of that. Could you please share your approximate budget for this purchase?</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold text-right">Jonathan Hall</div>
+                <div class="text-xl leading-relaxed text-right">About 2 50 k? 3 50.</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold ">AI</div>
+                <div class="text-xl leading-relaxed ">Thank you, Jonathan. I've noted a budget between 2 5 0 0 0 and 3 5 0 0 0 0. Will you be purchasing with cash, or will you require a mortgage?</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold text-right">Jonathan Hall</div>
+                <div class="text-xl leading-relaxed text-right">I'm mortgage.</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold ">AI</div>
+                <div class="text-xl leading-relaxed ">Great. Thank you for confirming you'll need a mortgage that that covers everything for now. I'll follow-up with some options that fit your preferences. If you have any other questions, in the meantime, please let me know.</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold text-right">Jonathan Hall</div>
+                <div class="text-xl leading-relaxed text-right">Okay. Thank you.</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold ">AI</div>
+                <div class="text-xl leading-relaxed ">Thank you, Jonathan. I appreciate your time. I'll be in touch soon with suitable options. Have a great day.</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold text-right">Jonathan Hall</div>
+                <div class="text-xl leading-relaxed text-right">Thank you. Bye.</div>
+              </div>
+            
+              <div class="h-px bg-black"></div>
+              <div class="space-y-3">
+                <div class="text-xl font-bold ">AI</div>
+                <div class="text-xl leading-relaxed ">You're very welcome, Jonathan. Take care, and bye for now.</div>
+              </div>
+            
+            <div class="h-px bg-black"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end #convBody -->
+  </section>
+
+  <!-- LinkedIn Info Section (оставлен как в дизайне; статично) -->
+  <section class="bg-white py-24 lg:py-36">
+    <div class="px-6 lg:px-24">
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
+        <div class="lg:w-[473px]">
+          <div class="text-xl mb-12">Interests</div>
+          <div class="flex flex-wrap gap-4"><button class="px-6 py-3 border border-black rounded-lg text-lg lg:text-xl font-normal">Real estate financing</button><button class="px-6 py-3 border border-black rounded-lg text-lg lg:text-xl font-normal">Fintech innovation</button><button class="px-6 py-3 border border-black rounded-lg text-lg lg:text-xl font-normal">Luxury travel</button></div>
+        </div>
+        <div class="flex-1">
+          <h2 class="text-3xl lg:text-5xl font-normal mb-2">Linkedin Info</h2>
+          <div class="mb-8 text-black/60 text-sm">LabelExample</div>
+          <div class="space-y-3">
+            <div class="h-px bg-black"></div>
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8 py-1.5">
+              <div class="flex-1 text-xl lg:text-2xl font-normal">Position</div>
+              <div class="text-xl lg:text-2xl font-normal">—</div>
+            </div>
+            <div class="h-px bg-black"></div>
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8 py-1.5">
+              <div class="flex-1 text-xl lg:text-2xl font-normal">Location</div>
+              <div class="text-xl lg:text-2xl font-normal">—</div>
+            </div>
+            <div class="h-px bg-black"></div>
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8 py-1.5">
+              <div class="flex-1 text-xl lg:text-2xl font-normal">Industry</div>
+              <div class="text-xl lg:text-2xl font-normal">—</div>
+            </div>
+            <div class="h-px bg-black"></div>
+            <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8 py-1.5">
+              <div class="flex-1 text-xl lg:text-2xl font-normal">Experience</div>
+              <div class="flex-1 text-xl lg:text-2xl font-normal text-left lg:text-right">
+                —
+              </div>
+            </div>
+            <div class="h-px bg-black"></div>
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8 py-1.5">
+              <div class="flex-1 text-xl lg:text-2xl font-normal">linkedin</div>
+              <div class="text-xl lg:text-2xl font-normal underline">—</div>
+            </div>
+            <div class="h-px bg-black"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Data Section -->
+  <section class="bg-app-teal py-24 lg:py-36">
+    <div class="px-6 lg:px-24">
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 mb-20">
+        <div class="lg:w-[473px] text-white">
+          <span class="text-base opacity-80">Last App Session</span>
+          <span class="text-2xl"> —</span>
+        </div>
+        <div class="flex-1">
+          <h2 class="text-3xl lg:text-5xl font-normal text-white mb-2">App Data</h2>
+          <div class="mb-8 text-white/80 text-sm">Showing <span class="px-2 py-0.5 rounded bg-white/10">example</span> data until app activity is received.</div>
+          <p class="text-2xl text-white">Summary of your app usage</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div class="bg-app-teal-light p-6 lg:p-8 h-80 flex flex-col justify-between">
+          <div class="text-white text-base">Search time</div>
+          <div class="flex flex-col gap-8">
+            <div class="text-white text-4xl lg:text-6xl font-normal leading-tight">1h 25m</div>
+            <div class="h-px bg-black opacity-10"></div>
+            <div class="text-white text-sm opacity-30 leading-tight">The Profit on Cost indicator reflects a strong and efficient return on investment.</div>
+          </div>
+        </div>
+
+        <div class="bg-app-teal-light p-6 lg:p-8 h-80 flex flex-col justify-between">
+          <div class="text-white text-base">Property views</div>
+          <div class="flex flex-col gap-8">
+            <div class="text-white text-4xl lg:text-6xl font-normal leading-tight">78</div>
+            <div class="h-px bg-black opacity-10"></div>
+            <div class="text-white text-sm opacity-30 leading-tight">We have meticulously developed the financial model, ensuring stable cash flow.</div>
+          </div>
+        </div>
+
+        <div class="bg-app-teal-light p-6 lg:p-8 h-80 flex flex-col justify-between">
+          <div class="text-white text-base">Sessions</div>
+          <div class="flex flex-col gap-8">
+            <div class="text-white text-4xl lg:text-6xl font-normal leading-tight">12</div>
+            <div class="h-px bg-black opacity-10"></div>
+            <div class="text-white text-sm opacity-30 leading-tight">We have meticulously developed the financial model, ensuring stable cash flow.</div>
+          </div>
+        </div>
+
+        <div class="bg-app-teal-light p-6 lg:p-8 h-80 flex flex-col justify-between">
+          <div class="text-white text-base">Favorites</div>
+          <div class="flex flex-col gap-8">
+            <div class="text-white text-4xl lg:text-6xl font-normal leading-tight">5</div>
+            <div class="h-px bg-black opacity-10"></div>
+            <div class="text-white text-sm opacity-30 leading-tight">We have meticulously developed the financial model, ensuring stable cash flow.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Таблицы «Favorites/Recently viewed» оставлены как в твоём дизайне (статично) -->
+      <div class="mb-16">
+        <h3 class="text-2xl text-white font-medium mb-16">Favorites: (example)</h3>
+        <div class="grid grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
+          <div class="text-white text-lg">Favorite</div>
+          <div class="text-white text-lg text-right">Price</div>
+          <div class="text-white text-lg hidden lg:block text-right">Beds</div>
+          <div class="text-white text-lg hidden lg:block">Type</div>
+          <div class="text-white text-lg hidden lg:block text-right">Annual Income</div>
+          <div class="text-white text-lg hidden lg:block text-right">Location</div>
+        </div>
+        <div class="h-px bg-white mb-4"></div>
+        
+          <div>
+            <div class="grid grid-cols-2 lg:grid-cols-6 gap-6 py-4">
+              <div class="text-white text-xl lg:text-2xl underline">Title</div>
+              <div class="text-white text-xl lg:text-2xl text-right">€900,000</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">4</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl">Villa</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">6.7%</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">Marbella</div>
+            </div>
+            <div class="h-px bg-white"></div>
+          </div>
+        
+          <div>
+            <div class="grid grid-cols-2 lg:grid-cols-6 gap-6 py-4">
+              <div class="text-white text-xl lg:text-2xl underline">Title</div>
+              <div class="text-white text-xl lg:text-2xl text-right">€900,000</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">4</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl">Villa</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">6.7%</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">Marbella</div>
+            </div>
+            <div class="h-px bg-white"></div>
+          </div>
+        
+          <div>
+            <div class="grid grid-cols-2 lg:grid-cols-6 gap-6 py-4">
+              <div class="text-white text-xl lg:text-2xl underline">Title</div>
+              <div class="text-white text-xl lg:text-2xl text-right">€900,000</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">4</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl">Villa</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">6.7%</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">Marbella</div>
+            </div>
+            <div class="h-px bg-white"></div>
+          </div>
+        
+        <div class="text-right mt-8">
+          <a href="#" class="text-app-cyan text-2xl underline">Show All</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-2xl text-white font-medium mb-16">Recently viewed: (example)</h3>
+        <div class="grid grid-cols-2 lg:grid-cols-6 gap-6 mb-6">
+          <div class="text-white text-lg">Favorite</div>
+          <div class="text-white text-lg text-right">Price</div>
+          <div class="text-white text-lg hidden lg:block text-right">Beds</div>
+          <div class="text-white text-lg hidden lg:block">Type</div>
+          <div class="text-white text-lg hidden lg:block text-right">Annual Income</div>
+          <div class="text-white text-lg hidden lg:block text-right">Location</div>
+        </div>
+        <div class="h-px bg-white mb-4"></div>
+        
+          <div>
+            <div class="grid grid-cols-2 lg:grid-cols-6 gap-6 py-4">
+              <div class="text-white text-xl lg:text-2xl underline">Title</div>
+              <div class="text-white text-xl lg:text-2xl text-right">€900,000</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">4</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl">Villa</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">6.7%</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">Marbella</div>
+            </div>
+            <div class="h-px bg-white"></div>
+          </div>
+        
+          <div>
+            <div class="grid grid-cols-2 lg:grid-cols-6 gap-6 py-4">
+              <div class="text-white text-xl lg:text-2xl underline">Title</div>
+              <div class="text-white text-xl lg:text-2xl text-right">€900,000</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">4</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl">Villa</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">6.7%</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">Marbella</div>
+            </div>
+            <div class="h-px bg-white"></div>
+          </div>
+        
+          <div>
+            <div class="grid grid-cols-2 lg:grid-cols-6 gap-6 py-4">
+              <div class="text-white text-xl lg:text-2xl underline">Title</div>
+              <div class="text-white text-xl lg:text-2xl text-right">€900,000</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">4</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl">Villa</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">6.7%</div>
+              <div class="hidden lg:block text-white text-xl lg:text-2xl text-right">Marbella</div>
+            </div>
+            <div class="h-px bg-white"></div>
+          </div>
+        
+        <div class="text-right mt-8">
+          <a href="#" class="text-app-cyan text-2xl underline">Show All</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    var btn = document.getElementById('convToggle');
+    var body = document.getElementById('convBody');
+    var arrow = document.getElementById('convArrow');
+    if(btn && body && arrow){
+      btn.addEventListener('click', function(){
+        var isHidden = body.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180', isHidden);
+      });
+    }
+  });
+</script>
+</body>
+</html>
