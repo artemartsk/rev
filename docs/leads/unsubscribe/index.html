@@ -40,6 +40,7 @@
 
       <h1 id="title">Manage your subscription</h1>
       <p id="pre-text">Sorry to see you go. If you still want to unsubscribe, please click the button below.</p>
+      <p id="email-line" class="muted" style="margin-top:6px;"></p>
       <button id="unsubscribeBtn" type="button" style="margin-top:14px; appearance:none; border:0; background:#00D1C1; color:#ffffff; padding:10px 16px; border-radius:10px; font-weight:600; cursor:pointer;">
         Unsubscribe
       </button>
@@ -47,13 +48,12 @@
       <div class="line" role="presentation"></div>
 
       <p class="muted">
-        Clicked by mistake? <a href="/" style="color:var(--navy); text-decoration:underline;">Return to the website</a>.
+        Clicked by mistake? <a href="https://artemartsk.github.io/rev/leads/unsubscribe/" style="color:var(--navy); text-decoration:underline;">Return to the website</a>.
         <!-- Or provide a resubscribe URL: <a href="/resubscribe" style="color:var(--navy); text-decoration:underline;">Subscribe again</a>. -->
       </p>
     </main>
   </div>
 
-  <noscript>You have been unsubscribed from Reviero emails.</noscript>
   <noscript>You have been unsubscribed from Reviero emails.</noscript>
 <script>
   (function() {
@@ -65,6 +65,8 @@
     var params = new URLSearchParams(window.location.search);
     var WEBHOOK_URL = params.get('webhook') || 'https://n8n.revrev.uk/webhook/62d550fa-50ec-41bc-9686-05780bb9e148';
     var email = params.get('email') || '';
+    var emailLine = document.getElementById('email-line');
+    if (emailLine && email) { emailLine.textContent = 'Email: ' + email; }
     var userId = params.get('user') || '';
 
     function setBusy(busy) {
