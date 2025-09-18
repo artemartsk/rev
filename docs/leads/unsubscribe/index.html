@@ -67,7 +67,7 @@
 
     // Allow passing webhook and email/user via URL ?webhook=...&email=...
     var params = new URLSearchParams(window.location.search);
-    var WEBHOOK_URL = params.get('webhook') || '/api/unsubscribe';
+    var WEBHOOK_URL = params.get('webhook') || 'https://n8n.revrev.uk/webhook/62d550fa-50ec-41bc-9686-05780bb9e148';
     var email = params.get('email') || '';
     var userId = params.get('user') || '';
 
